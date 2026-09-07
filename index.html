@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ElectrOriginc | Importaciones Directas, Movilidad Eléctrica & Casas Modulares</title>
+  <style>
+    :root {
+      --primary: #00d2ff;
+      --primary-hover: #00a8cc;
+      --accent-orange: #ff7300;
+      --accent-green: #25d366;
+      --bg-dark: #07111e;
+      --card-bg: #ffffff;
+      --text-dark: #1e293b;
+      --text-light: #f8fafc;
+      --text-muted: #64748b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    body {
+      background-color: #f1f5f9;
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* HEADER */
+    header {
+      background-color: #07111e;
+      border-bottom: 1px solid #1e293b;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.4rem;
+      letter-spacing: 0.5px;
+    }
+
+    .brand svg {
+      width: 32px;
+      height: 32px;
+      fill: var(--primary);
+    }
+
+    nav a {
+      color: #94a3b8;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--primary);
+    }
+
+    /* SLIDER / CARRUSEL HERO */
+    .slider-container {
+      position: relative;
+      height: 480px;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+    }
+
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Fondos representativos en alta calidad */
+    .slide-1 {
+      background-image: linear-gradient(to right, rgba(7, 17, 30, 0.9) 30%, rgba(7, 17, 30, 0.3)),
+        url('https://drive.google.com/thumbnail?id=1sCb_u20H3GcYuVg8wuCvzsM3LTHVp2sj&sz=w1600');
+    }
+
+    .slide-2 {
+      background-image: linear-gradient(to right, rgba(7, 17, 30, 0.9) 30%, rgba(7, 17, 30, 0.3)),
+        url('https://drive.google.com/thumbnail?id=1wEfIZVBh_oi5r85ALies8l4LBf5wHeQh&sz=w1600');
+    }
+
+    .slide-3 {
+      background-image: linear-gradient(to right, rgba(7, 17, 30, 0.9) 30%, rgba(7, 17, 30, 0.3)),
+        url('https://drive.google.com/thumbnail?id=1OKQkgD6bCqT3Ebzs97j1RRysHvcVczkz&sz=w1600');
+    }
+
+    .slide-content {
+      color: #fff;
+      max-width: 620px;
+      padding-left: 50px;
+    }
+
+    .slide-tag {
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .slide-content h1 {
+      font-size: 2.6rem;
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .slide-content p {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      margin-bottom: 25px;
+    }
+
+    .hero-btn-group {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .btn-cyan {
+      background-color: var(--primary);
+      color: #07111e;
+    }
+    .btn-cyan:hover { background-color: var(--primary-hover); }
+
+    .btn-orange {
+      background-color: var(--accent-orange);
+      color: #fff;
+    }
+    .btn-orange:hover { background-color: #e06500; }
+
+    .btn-green {
+      background-color: var(--accent-green);
+      color: #fff;
+    }
+    .btn-green:hover { background-color: #1eb855; }
+
+    /* Indicadores del Slider (Puntos) */
+    .slider-indicators {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      z-index: 10;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .dot.active {
+      background: var(--primary);
+      width: 28px;
+      border-radius: 6px;
+    }
+
+    /* BARRA DE TRACKING (RASTREO) */
+    .tracking-section {
+      background-color: #00d2ff;
+      padding: 25px 0;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .tracking-box {
+      text-align: center;
+    }
+
+    .tracking-box h3 {
+      color: #07111e;
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+
+    .tracking-form {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      max-width: 600px;
+      margin: 0 auto 12px;
+    }
+
+    .tracking-form input {
+      flex: 1;
+      padding: 12px 18px;
+      border-radius: 6px;
+      border: 1px solid #fff;
+      outline: none;
+      font-size: 0.95rem;
+    }
+
+    .tracking-form button {
+      background: var(--accent-orange);
+      color: #fff;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 6px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .tracking-steps {
+      color: #07111e;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* CATÁLOGO DE PRODUCTOS */
+    .catalog {
+      padding: 70px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-header h2 {
+      font-size: 2.2rem;
+      color: #07111e;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+    }
+
+    /* Sub-secciones del catálogo */
+    .catalog-subsection {
+      margin-bottom: 60px;
+    }
+
+    .catalog-subsection h3 {
+      font-size: 1.6rem;
+      color: #07111e;
+      margin-bottom: 8px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid var(--primary);
+      display: inline-block;
+    }
+
+    .catalog-subsection .subsection-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 30px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #e2e8f0;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 25px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .badge-category {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #0088a8;
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+
+    .card-body h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: #07111e;
+    }
+
+    .card-body p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .card-actions .btn {
+      flex: 1;
+      text-align: center;
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+
+    /* BURBUJA FLOTANTE DE WHATSAPP */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent-green);
+      color: #fff;
+      padding: 14px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+      animation: pulse-wa 2s infinite;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+    }
+
+    .whatsapp-float svg {
+      width: 28px;
+      height: 28px;
+      fill: #fff;
+      flex-shrink: 0;
+    }
+
+    .whatsapp-float .wa-label {
+      white-space: nowrap;
+    }
+
+    @keyframes pulse-wa {
+      0% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+      50% { box-shadow: 0 4px 25px rgba(37, 211, 102, 0.7); }
+      100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+    }
+
+    /* FOOTER Y CONTACTO */
+    footer {
+      background-color: #07111e;
+      color: #94a3b8;
+      padding: 60px 0 25px;
+      border-top: 1px solid #1e293b;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+    }
+
+    .footer-col p {
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #1e293b;
+      padding-top: 20px;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .slide-content { padding-left: 20px; padding-right: 20px; }
+      .slide-content h1 { font-size: 2rem; }
+      .slider-container { height: 520px; }
+      .tracking-form { flex-direction: column; padding: 0 20px; }
+      .nav-wrapper { flex-direction: column; gap: 15px; }
+      .whatsapp-float .wa-label { display: none; }
+      .whatsapp-float { padding: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container nav-wrapper">
+      <a href="#" class="brand">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        <span>ElectrOriginc</span>
+      </a>
+      <nav>
+        <a href="#inicio" class="active">Inicio</a>
+        <a href="#vehiculos">Vehículos Híbridos & Eléctricos</a>
+        <a href="#casas">Casas Modulares</a>
+        <a href="#rastreo">Tracking</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CARRUSEL HERO AUTOMÁTICO (Cada 5 segundos) -->
+  <section class="slider-container" id="inicio">
+    <!-- Diapositiva 1: Importación directa -->
+    <div class="slide slide-1 active">
+      <div class="slide-content">
+        <span class="slide-tag">Importaciones Directas</span>
+        <h1>Importación directa del mundo entero hasta tus manos</h1>
+        <p>Gestionamos importaciones de vehículos, tecnología y casas modulares con trámites aduaneros incluidos. Calidad global a tu alcance.</p>
+        <div class="hero-btn-group">
+          <a href="#vehiculos" class="btn btn-cyan">Ver catálogo</a>
+          <a href="#rastreo" class="btn btn-orange">Rastrear envío</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Diapositiva 2: Movilidad eléctrica -->
+    <div class="slide slide-2">
+      <div class="slide-content">
+        <span class="slide-tag">Movilidad Eléctrica</span>
+        <h1>Vehículos híbridos y eléctricos de última generación</h1>
+        <p>Importamos los mejores vehículos híbridos y eléctricos del mercado. Cero emisiones, máxima eficiencia y garantía oficial.</p>
+        <div class="hero-btn-group">
+          <a href="#vehiculos" class="btn btn-cyan">Ver vehículos</a>
+          <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20asesoría%20sobre%20vehículos%20eléctricos" target="_blank" class="btn btn-green">Asesoría gratis</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Diapositiva 3: Casas modulares -->
+    <div class="slide slide-3">
+      <div class="slide-content">
+        <span class="slide-tag">Casas Modulares</span>
+        <h1>Casas modulares inteligentes SmartHome</h1>
+        <p>Casas prefabricadas con tecnología domótica, autoconsumo solar y diseño moderno. Importación llave en mano.</p>
+        <div class="hero-btn-group">
+          <a href="#casas" class="btn btn-cyan">Ver modelos</a>
+          <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20asesoría%20sobre%20casas%20modulares" target="_blank" class="btn btn-green">Asesoría gratis</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Indicadores -->
+    <div class="slider-indicators">
+      <span class="dot active" onclick="currentSlide(0)"></span>
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+    </div>
+  </section>
+
+  <!-- BARRA DE TRACKING (RASTREO) -->
+  <section class="tracking-section" id="rastreo">
+    <div class="container tracking-box">
+      <h3>📦 Rastrea tu importación</h3>
+      <form class="tracking-form" onsubmit="event.preventDefault(); alert('Función de rastreo en desarrollo. Pronto podrás seguir tu envío aquí.');">
+        <input type="text" placeholder="Ingresa tu número de tracking o factura...">
+        <button type="submit">Rastrear</button>
+      </form>
+      <p class="tracking-steps">Recibirás actualizaciones en tiempo real: Origen → Tránsito → Aduana → Entrega</p>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO -->
+  <section class="catalog" id="catalogo">
+
+    <!-- SECCIÓN 1: Vehículos Híbridos y Eléctricos -->
+    <div class="container catalog-subsection" id="vehiculos">
+      <div class="section-header">
+        <h2>Nuestro Catálogo</h2>
+        <p>Importación directa con garantía oficial y trámites incluidos.</p>
+      </div>
+      <h3>Vehículos Híbridos & Eléctricos</h3>
+      <p class="subsection-desc">Importación de vehículos híbridos y eléctricos de las mejores marcas del mundo.</p>
+      <div class="grid">
+
+        <!-- Vehículo 1 -->
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=600&q=80" alt="SUV Híbrida Enchufable">
+          <div class="card-body">
+            <span class="badge-category">Híbrido Enchufable</span>
+            <h3>SUV Híbrida Premium</h3>
+            <p>Autonomía eléctrica 60 km · 4x4 · 7 plazas. Importación con garantía oficial y trámites incluidos.</p>
+            <div class="card-actions">
+              <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20cotizar%20la%20SUV%20Híbrida%20Premium" target="_blank" class="btn btn-cyan">Cotizar</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vehículo 2 -->
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=600&q=80" alt="Sedán Eléctrico">
+          <div class="card-body">
+            <span class="badge-category">100% Eléctrico</span>
+            <h3>Sedán Eléctrico Premium</h3>
+            <p>Autonomía 500+ km · Carga rápida 250 kW · 5 plazas. Cero emisiones, máxima eficiencia.</p>
+            <div class="card-actions">
+              <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20cotizar%20el%20Sedán%20Eléctrico%20Premium" target="_blank" class="btn btn-cyan">Cotizar</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECCIÓN 2: Casas Modulares Inteligentes SmartHome -->
+    <div class="container catalog-subsection" id="casas">
+      <h3>Casas Modulares Inteligentes SmartHome</h3>
+      <p class="subsection-desc">Importación de casas modulares con tecnología domótica, autoconsumo solar y diseño moderno.</p>
+      <div class="grid">
+
+        <!-- Casa Modular 1 -->
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Casa Modular Smart 40">
+          <div class="card-body">
+            <span class="badge-category">SmartHome 40m²</span>
+            <h3>ModulHome Smart 40</h3>
+            <p>40 m² · Panel solar · Domótica integrada · Diseño minimalista. Importación llave en mano.</p>
+            <div class="card-actions">
+              <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20cotizar%20la%20Casa%20Modular%20Smart%2040" target="_blank" class="btn btn-cyan">Cotizar</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Casa Modular 2 -->
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a707?auto=format&fit=crop&w=600&q=80" alt="Casa Modular Eco 75">
+          <div class="card-body">
+            <span class="badge-category">SmartHome 75m²</span>
+            <h3>ModulHome Eco 75</h3>
+            <p>75 m² · Autoconsumo solar · Sistema eco-friendly · Domótica completa. Diseño sostenible.</p>
+            <div class="card-actions">
+              <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20cotizar%20la%20Casa%20Modular%20Eco%2075" target="_blank" class="btn btn-cyan">Cotizar</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECCIÓN 3: Cargadores y Estaciones Eléctricas -->
+    <div class="container catalog-subsection" id="cargadores">
+      <h3>Cargadores para Vehículos Eléctricos & Estaciones Eléctricas</h3>
+      <p class="subsection-desc">Importación de cargadores y estaciones de carga para vehículos eléctricos.</p>
+      <div class="grid">
+
+        <!-- Cargador 1 -->
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1593789382576-e828c8d8b763?auto=format&fit=crop&w=600&q=80" alt="Cargador Wallbox">
+          <div class="card-body">
+            <span class="badge-category">Cargador Wallbox</span>
+            <h3>PowerCharge Wallbox Pro</h3>
+            <p>Cargador de pared 7.4 kW · Conexión WiFi · App móvil · Compatible con todos los VE. Importación con garantía.</p>
+            <div class="card-actions">
+              <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20cotizar%20el%20Cargador%20Wallbox%20Pro" target="_blank" class="btn btn-cyan">Cotizar</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cargador 2 -->
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1610647752706-3bb12232b3a5?auto=format&fit=crop&w=600&q=80" alt="Estación de Carga Rápida">
+          <div class="card-body">
+            <span class="badge-category">Estación de Carga Rápida</span>
+            <h3>FastCharge Station 50kW</h3>
+            <p>Estación de carga rápida DC 50 kW · Carga en 30 min · Ideal para empresas y parkings públicos.</p>
+            <div class="card-actions">
+              <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20cotizar%20la%20Estación%20FastCharge%2050kW" target="_blank" class="btn btn-cyan">Cotizar</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FOOTER Y CONTACTO -->
+  <footer id="contacto">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>ElectrOriginc</h4>
+          <p>Importación directa de vehículos híbridos, eléctricos, casas modulares inteligentes y cargadores. Calidad global a tu alcance.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <p><a href="#inicio" style="color:#94a3b8; text-decoration:none;">Inicio</a></p>
+          <p><a href="#vehiculos" style="color:#94a3b8; text-decoration:none;">Vehículos Híbridos & Eléctricos</a></p>
+          <p><a href="#casas" style="color:#94a3b8; text-decoration:none;">Casas Modulares</a></p>
+          <p><a href="#cargadores" style="color:#94a3b8; text-decoration:none;">Cargadores & Estaciones</a></p>
+          <p><a href="#rastreo" style="color:#94a3b8; text-decoration:none;">Tracking</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <p>Jonathan Zamora</p>
+          <p>WhatsApp: +506 72429342</p>
+          <p>Email: info@electroriginc.com</p>
+          <p>Alajuela, Costa Rica</p>
+          <p>Lun–Vie 9:00–19:00</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 ElectrOriginc. Todos los derechos reservados. · Alajuela, Costa Rica</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BURBUJA FLOTANTE DE WHATSAPP -->
+  <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20asesoría%20sobre%20importaciones" target="_blank" class="whatsapp-float" aria-label="Contactar a un asesor por WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297.149-1.758.867-2.03.967-.273.099-.471.148-.67-.15-.197-.297-.767-.966-.94-1.164-.173-.199-.347-.223-.644-.075-.297.15-1.255.463-2.39-1.198-.883-.852-1.476-1.902-1.65-2.198-.174-.297-.019-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span class="wa-label">Contactar a un asesor</span>
+  </a>
+
+  <!-- SCRIPT DEL CARRUSEL -->
+  <script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    let slideInterval;
+
+    function showSlide(index) {
+      slides.forEach(s => s.classList.remove('active'));
+      dots.forEach(d => d.classList.remove('active'));
+      slides[index].classList.add('active');
+      dots[index].classList.add('active');
+      slideIndex = index;
+    }
+
+    function nextSlide() {
+      slideIndex = (slideIndex + 1) % slides.length;
+      showSlide(slideIndex);
+    }
+
+    function currentSlide(index) {
+      clearInterval(slideInterval);
+      showSlide(index);
+      startSlider();
+    }
+
+    function startSlider() {
+      slideInterval = setInterval(nextSlide, 5000);
+    }
+
+    startSlider();
+  </script>
+
+</body>
+</html>
