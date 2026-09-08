@@ -12,7 +12,6 @@
       --bg-main: #0b0f15;
       --bg-header: #080c10;
       --bg-card: #1b222a;
-      --bg-card-hover: #1c232d;
       --border-card: #2d3744;
       --input-bg: #1e242d;
       --input-border: #2d3744;
@@ -41,6 +40,7 @@
       padding: 0 20px;
     }
 
+    /* HEADER */
     header {
       background-color: var(--bg-header);
       border-bottom: 1px solid #18202c;
@@ -153,6 +153,7 @@
       color: var(--primary);
     }
 
+    /* SLIDER / CARRUSEL HERO */
     .slider-container {
       position: relative;
       height: 520px;
@@ -264,6 +265,7 @@
       color: #fff;
     }
 
+    /* Indicadores del Slider */
     .slider-indicators {
       position: absolute;
       bottom: 25px;
@@ -290,6 +292,7 @@
       border-radius: 4px;
     }
 
+    /* BARRA DE TRACKING */
     .tracking-section {
       background-color: #0e131a;
       padding: 35px 0;
@@ -340,11 +343,29 @@
       box-shadow: 0 0 10px rgba(118, 230, 0, 0.2);
     }
 
+    .tracking-form button {
+      background: var(--primary);
+      color: #070a05;
+      border: none;
+      padding: 13px 25px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 0 16px var(--primary-glow);
+      transition: all 0.25s ease;
+    }
+
+    .tracking-form button:hover {
+      background: var(--primary-hover);
+      box-shadow: 0 0 24px rgba(118, 230, 0, 0.6);
+    }
+
     .tracking-steps {
       color: var(--text-body);
       font-size: 0.85rem;
     }
 
+    /* CATÁLOGO CON FONDO CIBERNÉTICO */
     .catalog {
       padding: 80px 0;
       background-color: #0b0f15;
@@ -386,6 +407,9 @@
       font-weight: 700;
       color: #ffffff;
       margin-bottom: 6px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid var(--primary);
+      display: inline-block;
     }
 
     .catalog-subsection .subsection-desc {
@@ -457,7 +481,7 @@
       display: inline-block;
     }
 
-    .card-body h4 {
+    .card-body h3 {
       font-size: 1.3rem;
       font-weight: 700;
       margin-bottom: 10px;
@@ -482,6 +506,7 @@
       font-size: 0.95rem;
     }
 
+    /* BURBUJA FLOTANTE DE WHATSAPP */
     .whatsapp-float {
       position: fixed;
       bottom: 25px;
@@ -517,6 +542,7 @@
       white-space: nowrap;
     }
 
+    /* FOOTER */
     footer {
       background-color: var(--bg-header);
       color: var(--text-body);
@@ -577,9 +603,7 @@
           </svg>
         </div>
         <div class="brand-text">
-          <div class="brand-title">
-            ElectrOriginc
-          </div>
+          <div class="brand-title">ElectrOriginc</div>
           <div class="brand-subtitle">
             <span class="sub-line"></span>
             <span class="sub-text">MÓVILIDAD, TECNOLOGÍA, INNOVACIÓN</span>
@@ -589,30 +613,30 @@
       </a>
       <nav>
         <a href="#inicio" class="active">Inicio</a>
-        <a href="#vehiculos">Vehículos</a>
-        <a href="#casas">Casas</a>
+        <a href="#vehiculos">Vehículos Híbridos & Eléctricos</a>
+        <a href="#casas">Casas Modulares</a>
         <a href="#rastreo">Tracking</a>
         <a href="#contacto">Contacto</a>
       </nav>
     </div>
   </header>
 
-  <!-- CARRUSEL HERO -->
+  <!-- CARRUSEL HERO AUTOMÁTICO (Cada 5 segundos) -->
   <section class="slider-container" id="inicio">
-    <!-- Slide 1: Importaciones Directas -->
+    <!-- Diapositiva 1: Importación directa -->
     <div class="slide slide-1 active">
       <div class="slide-content">
         <span class="slide-tag">Importaciones Directas</span>
         <h1>Importación directa del mundo entero hasta tus manos</h1>
-        <p>Gestionamos importaciones de vehículos, tecnología y casas modulares con trámites aduaneros incluidos.</p>
+        <p>Gestionamos importaciones de vehículos, tecnología y casas modulares con trámites aduaneros incluidos. Calidad global a tu alcance.</p>
         <div class="hero-btn-group">
-          <a href="#catalogo" class="btn btn-lime">Ver catálogo</a>
+          <a href="#vehiculos" class="btn btn-lime">Ver catálogo</a>
           <a href="#rastreo" class="btn btn-outline">Rastrear envío</a>
         </div>
       </div>
     </div>
 
-    <!-- Slide 2: Movilidad Eléctrica -->
+    <!-- Diapositiva 2: Movilidad eléctrica -->
     <div class="slide slide-2">
       <div class="slide-content">
         <span class="slide-tag">Movilidad Eléctrica</span>
@@ -625,12 +649,12 @@
       </div>
     </div>
 
-    <!-- Slide 3: Casas Modulares -->
+    <!-- Diapositiva 3: Casas modulares -->
     <div class="slide slide-3">
       <div class="slide-content">
         <span class="slide-tag">Casas Modulares</span>
         <h1>Casas modulares inteligentes SmartHome</h1>
-        <p>Casas prefabricadas con tecnología domótica, autoconsumo solar y diseño moderno.</p>
+        <p>Casas prefabricadas con tecnología domótica, autoconsumo solar y diseño moderno. Importación llave en mano.</p>
         <div class="hero-btn-group">
           <a href="#casas" class="btn btn-lime">Ver modelos</a>
           <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20asesoría%20sobre%20casas%20modulares" target="_blank" class="btn btn-lime">Asesoría gratis</a>
@@ -646,13 +670,13 @@
     </div>
   </section>
 
-  <!-- BARRA DE TRACKING -->
+  <!-- BARRA DE TRACKING (RASTREO) -->
   <section class="tracking-section" id="rastreo">
     <div class="container tracking-box">
       <h3>📦 Rastrea tu importación</h3>
       <form class="tracking-form" onsubmit="event.preventDefault(); alert('Función de rastreo en desarrollo. Pronto podrás seguir tu envío aquí.');">
-        <input type="text" placeholder="Ingresa tu numero de tracking y factura...">
-        <button type="submit" class="btn btn-lime">Rastrear</button>
+        <input type="text" placeholder="Ingresa tu número de tracking o factura...">
+        <button type="submit">Rastrear</button>
       </form>
       <p class="tracking-steps">Recibirás actualizaciones en tiempo real: Origen → Tránsito → Aduana → Entrega</p>
     </div>
@@ -660,14 +684,13 @@
 
   <!-- CATÁLOGO -->
   <section class="catalog" id="catalogo">
-    
-    <div class="container section-header">
-      <h2>Nuestro Catálogo</h2>
-      <p>Importación directa con garantía oficial y trámites incluidos</p>
-    </div>
 
     <!-- SECCIÓN 1: Vehículos Híbridos y Eléctricos -->
     <div class="container catalog-subsection" id="vehiculos">
+      <div class="section-header">
+        <h2>Nuestro Catálogo</h2>
+        <p>Importación directa con garantía oficial y trámites incluidos.</p>
+      </div>
       <h3>Vehículos Híbridos & Eléctricos</h3>
       <p class="subsection-desc">Importación de vehículos híbridos y eléctricos de las mejores marcas del mundo.</p>
       <div class="grid">
@@ -676,11 +699,9 @@
         <div class="card">
           <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=600&q=80" alt="SUV Híbrida Enchufable">
           <div class="card-body">
-            <div>
-              <span class="badge-category">Híbrido Enchufable</span>
-              <h4>SUV Híbrida Premium</h4>
-              <p>Autonomía eléctrica 60 km · 4x4 · 7 plazas. Importación con garantía oficial y trámites incluidos.</p>
-            </div>
+            <span class="badge-category">Híbrido Enchufable</span>
+            <h3>SUV Híbrida Premium</h3>
+            <p>Autonomía eléctrica 60 km · 4x4 · 7 plazas. Importación con garantía oficial y trámites incluidos.</p>
             <div class="card-actions">
               <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20cotizar%20la%20SUV%20Híbrida%20Premium" target="_blank" class="btn btn-lime">Cotizar</a>
             </div>
@@ -691,11 +712,9 @@
         <div class="card">
           <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=600&q=80" alt="Sedán Eléctrico">
           <div class="card-body">
-            <div>
-              <span class="badge-category">100% Eléctrico</span>
-              <h4>Sedán Eléctrico Premium</h4>
-              <p>Autonomía 500+ km · Carga rápida 250 kW · 5 plazas. Cero emisiones, máxima eficiencia.</p>
-            </div>
+            <span class="badge-category">100% Eléctrico</span>
+            <h3>Sedán Eléctrico Premium</h3>
+            <p>Autonomía 500+ km · Carga rápida 250 kW · 5 plazas. Cero emisiones, máxima eficiencia.</p>
             <div class="card-actions">
               <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20cotizar%20el%20Sedán%20Eléctrico%20Premium" target="_blank" class="btn btn-lime">Cotizar</a>
             </div>
@@ -705,36 +724,32 @@
       </div>
     </div>
 
-    <!-- SECCIÓN 2: Casas Modulares Inteligentes -->
+    <!-- SECCIÓN 2: Casas Modulares Inteligentes SmartHome -->
     <div class="container catalog-subsection" id="casas">
       <h3>Casas Modulares Inteligentes SmartHome</h3>
       <p class="subsection-desc">Importación de casas modulares con tecnología domótica, autoconsumo solar y diseño moderno.</p>
       <div class="grid">
 
-        <!-- Casa 1 -->
+        <!-- Casa Modular 1 -->
         <div class="card">
           <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Casa Modular Smart 40">
           <div class="card-body">
-            <div>
-              <span class="badge-category">SmartHome 40m²</span>
-              <h4>ModulHome Smart 40</h4>
-              <p>40 m² · Panel solar · Domótica integrada · Diseño minimalista. Importación llave en mano.</p>
-            </div>
+            <span class="badge-category">SmartHome 40m²</span>
+            <h3>ModulHome Smart 40</h3>
+            <p>40 m² · Panel solar · Domótica integrada · Diseño minimalista. Importación llave en mano.</p>
             <div class="card-actions">
               <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20cotizar%20la%20Casa%20Modular%20Smart%2040" target="_blank" class="btn btn-lime">Cotizar</a>
             </div>
           </div>
         </div>
 
-        <!-- Casa 2 -->
+        <!-- Casa Modular 2 -->
         <div class="card">
           <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a707?auto=format&fit=crop&w=600&q=80" alt="Casa Modular Eco 75">
           <div class="card-body">
-            <div>
-              <span class="badge-category">SmartHome 75m²</span>
-              <h4>ModulHome Eco 75</h4>
-              <p>75 m² · Autoconsumo solar · Sistema eco-friendly · Domótica completa. Diseño sostenible.</p>
-            </div>
+            <span class="badge-category">SmartHome 75m²</span>
+            <h3>ModulHome Eco 75</h3>
+            <p>75 m² · Autoconsumo solar · Sistema eco-friendly · Domótica completa. Diseño sostenible.</p>
             <div class="card-actions">
               <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20cotizar%20la%20Casa%20Modular%20Eco%2075" target="_blank" class="btn btn-lime">Cotizar</a>
             </div>
@@ -746,7 +761,7 @@
 
     <!-- SECCIÓN 3: Cargadores y Estaciones Eléctricas -->
     <div class="container catalog-subsection" id="cargadores">
-      <h3>Cargadores & Estaciones Eléctricas</h3>
+      <h3>Cargadores para Vehículos Eléctricos & Estaciones Eléctricas</h3>
       <p class="subsection-desc">Importación de cargadores y estaciones de carga para vehículos eléctricos.</p>
       <div class="grid">
 
@@ -754,11 +769,9 @@
         <div class="card">
           <img src="https://images.unsplash.com/photo-1593789382576-e828c8d8b763?auto=format&fit=crop&w=600&q=80" alt="Cargador Wallbox">
           <div class="card-body">
-            <div>
-              <span class="badge-category">Cargador Wallbox</span>
-              <h4>PowerCharge Wallbox Pro</h4>
-              <p>Cargador de pared 7.4 kW · Conexión WiFi · App móvil · Compatible con todos los VE. Importación con garantía.</p>
-            </div>
+            <span class="badge-category">Cargador Wallbox</span>
+            <h3>PowerCharge Wallbox Pro</h3>
+            <p>Cargador de pared 7.4 kW · Conexión WiFi · App móvil · Compatible con todos los VE. Importación con garantía.</p>
             <div class="card-actions">
               <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20cotizar%20el%20Cargador%20Wallbox%20Pro" target="_blank" class="btn btn-lime">Cotizar</a>
             </div>
@@ -769,11 +782,9 @@
         <div class="card">
           <img src="https://images.unsplash.com/photo-1610647752706-3bb12232b3a5?auto=format&fit=crop&w=600&q=80" alt="Estación de Carga Rápida">
           <div class="card-body">
-            <div>
-              <span class="badge-category">Estación de Carga Rápida</span>
-              <h4>FastCharge Station 50kW</h4>
-              <p>Estación de carga rápida DC 50 kW · Carga en 30 min · Ideal para empresas y parkings públicos.</p>
-            </div>
+            <span class="badge-category">Estación de Carga Rápida</span>
+            <h3>FastCharge Station 50kW</h3>
+            <p>Estación de carga rápida DC 50 kW · Carga en 30 min · Ideal para empresas y parkings públicos.</p>
             <div class="card-actions">
               <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20cotizar%20la%20Estación%20FastCharge%2050kW" target="_blank" class="btn btn-lime">Cotizar</a>
             </div>
@@ -785,7 +796,7 @@
 
   </section>
 
-  <!-- FOOTER -->
+  <!-- FOOTER Y CONTACTO -->
   <footer id="contacto">
     <div class="container">
       <div class="footer-grid">
@@ -860,6 +871,7 @@
       slideInterval = setInterval(nextSlide, 5000);
     }
 
+    // Swipe con los dedos
     function handleSwipe() {
       const diff = touchStartX - touchEndX;
       if (Math.abs(diff) > 50) {
