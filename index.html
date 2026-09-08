@@ -63,10 +63,11 @@
       letter-spacing: 0.5px;
     }
 
-    .brand svg {
-      width: 32px;
-      height: 32px;
-      fill: var(--primary);
+    .brand img {
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
+      border-radius: 6px;
     }
 
     nav a {
@@ -309,18 +310,19 @@
     }
 
     .card {
-      background: #fff;
+      background: #07111e;
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 4px 15px rgba(0,0,0,0.06);
       display: flex;
       flex-direction: column;
-      border: 1px solid #e2e8f0;
+      border: 1px solid #1e293b;
       transition: transform 0.2s;
     }
 
     .card:hover {
       transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 210, 255, 0.15);
     }
 
     .card img {
@@ -341,7 +343,7 @@
       font-size: 0.75rem;
       font-weight: 800;
       text-transform: uppercase;
-      color: #0088a8;
+      color: var(--primary);
       margin-bottom: 8px;
       display: inline-block;
     }
@@ -349,12 +351,12 @@
     .card-body h3 {
       font-size: 1.3rem;
       margin-bottom: 10px;
-      color: #07111e;
+      color: #fff;
     }
 
     .card-body p {
       font-size: 0.95rem;
-      color: var(--text-muted);
+      color: #94a3b8;
       margin-bottom: 20px;
     }
 
@@ -463,7 +465,7 @@
   <header>
     <div class="container nav-wrapper">
       <a href="#" class="brand">
-        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        <img src="https://drive.google.com/thumbnail?id=1eEKpa765U55pRhPXJEzqegtNcSZjm-eD&sz=w200" alt="ElectrOriginc Logo">
         <span>ElectrOriginc</span>
       </a>
       <nav>
@@ -509,7 +511,7 @@
       <div class="slide-content">
         <span class="slide-tag">Casas Modulares</span>
         <h1>Casas modulares inteligentes SmartHome</h1>
-        <p>Casas prefabricadas con tecnología domótica, autoconsumo solar y diseño moderno.</p>
+        <p>Casas prefabricadas con tecnología domótica, autoconsumo solar y diseño moderno. Importación llave en mano.</p>
         <div class="hero-btn-group">
           <a href="#casas" class="btn btn-cyan">Ver modelos</a>
           <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20asesoría%20sobre%20casas%20modulares" target="_blank" class="btn btn-green">Asesoría gratis</a>
@@ -657,7 +659,7 @@
       <div class="footer-grid">
         <div class="footer-col">
           <h4>ElectrOriginc</h4>
-          <p>Importación directa de vehículos híbridos, eléctricos, casas modulares inteligentes, estaciones y cargadores eléctricas. Calidad global a tu alcance.</p>
+          <p>Importación directa de vehículos híbridos, eléctricos, casas modulares inteligentes y cargadores. Calidad global a tu alcance.</p>
         </div>
         <div class="footer-col">
           <h4>Navegación</h4>
@@ -669,11 +671,11 @@
         </div>
         <div class="footer-col">
           <h4>Contacto</h4>
-          <p>Ejecutivo comercial</p>
+          <p>Jonathan Zamora</p>
           <p>WhatsApp: +506 72429342</p>
-          <p>Email: Info@electroriginc.com</p>
+          <p>Email: info@electroriginc.com</p>
           <p>Alajuela, Costa Rica</p>
-          <p>Lun–Vie 9:00–18:00</p>
+          <p>Lun–Vie 9:00–19:00</p>
         </div>
       </div>
       <div class="footer-bottom">
@@ -693,7 +695,10 @@
     let slideIndex = 0;
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
+    const slider = document.querySelector('.slider-container');
     let slideInterval;
+    let touchStartX = 0;
+    let touchEndX = 0;
 
     function showSlide(index) {
       slides.forEach(s => s.classList.remove('active'));
@@ -708,6 +713,11 @@
       showSlide(slideIndex);
     }
 
+    function prevSlide() {
+      slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+      showSlide(slideIndex);
+    }
+
     function currentSlide(index) {
       clearInterval(slideInterval);
       showSlide(index);
@@ -717,6 +727,29 @@
     function startSlider() {
       slideInterval = setInterval(nextSlide, 5000);
     }
+
+    // Swipe con los dedos
+    function handleSwipe() {
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 50) {
+        clearInterval(slideInterval);
+        if (diff > 0) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
+        startSlider();
+      }
+    }
+
+    slider.addEventListener('touchstart', function(e) {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    slider.addEventListener('touchend', function(e) {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
 
     startSlider();
   </script>
