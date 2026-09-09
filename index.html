@@ -106,8 +106,8 @@
     }
 
     .brand-icon {
-      width: 120px;
-      height: 120px;
+      width: 140px;
+      height: 140px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -296,7 +296,9 @@
       height: 100%;
       z-index: 10;
       cursor: pointer;
-      transition: background 0.3s;
+      background: transparent;
+      transition: background 0.15s ease;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .slider-click-zone.left { left: 0; }
@@ -304,6 +306,16 @@
 
     .slider-click-zone:hover {
       background: rgba(22, 198, 12, 0.08);
+    }
+
+    @media (hover: none) {
+      .slider-click-zone:hover {
+        background: transparent;
+      }
+    }
+
+    .slider-click-zone.flash {
+      background: rgba(22, 198, 12, 0.12);
     }
 
     /* Indicadores del Slider */
@@ -427,6 +439,7 @@
       padding: 35px 30px;
       text-align: center;
       transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
     }
 
     .audience-card:hover {
@@ -435,9 +448,12 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(22, 198, 12, 0.15);
     }
 
-    .audience-icon {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
+    .audience-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 18px;
     }
 
     .audience-card h3 {
@@ -828,7 +844,7 @@
     }
 
     @media (max-width: 1024px) {
-      .brand-icon { width: 90px; height: 90px; }
+      .brand-icon { width: 110px; height: 110px; }
       .brand-title { font-size: 1.35rem; }
       nav a { margin-left: 16px; font-size: 0.88rem; }
     }
@@ -843,7 +859,7 @@
       .tracking-form button { width: 100%; }
       .nav-wrapper { flex-direction: column; gap: 12px; padding: 12px 0; }
       .brand { justify-content: center; }
-      .brand-icon { width: 80px; height: 80px; }
+      .brand-icon { width: 100px; height: 100px; }
       .brand-title { font-size: 1.3rem; }
       .brand-subtitle .sub-text { font-size: 0.44rem; }
       nav { flex-wrap: wrap; justify-content: center; gap: 4px 12px; }
@@ -868,7 +884,7 @@
     }
 
     @media (max-width: 480px) {
-      .brand-icon { width: 65px; height: 65px; }
+      .brand-icon { width: 80px; height: 80px; }
       .brand-title { font-size: 1.15rem; }
       .brand-subtitle .sub-text { font-size: 0.38rem; letter-spacing: 1px; }
       .slide-content h1 { font-size: 1.7rem; }
@@ -981,16 +997,16 @@
     <div class="container">
       <div class="audience-grid">
         <div class="audience-card">
-          <div class="audience-icon">🏢</div>
+          <img class="audience-img" src="https://drive.google.com/thumbnail?id=19KqBvio75_uP1OFpS1jKeoMMwVHMxhfE&sz=w1600" alt="Empresas">
           <h3>Empresas</h3>
           <p>Importación y venta por volumen. Soluciones logísticas y comerciales para empresas con pedidos al por mayor.</p>
-          <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20asesoría%20sobre%20importación%20por%20volumen%20para%20empresas" target="_blank" class="btn btn-lime">Cotizar por volumen</a>
+          <a href="https://wa.me/50672429342?text=Hola%20Equipo%20ElectrOriginc,%20deseo%20asesoría%20sobre%20importación%20por%20volumen%20para%20empresas" target="_blank" class="btn btn-lime">Cotizar por volumen</a>
         </div>
         <div class="audience-card">
-          <div class="audience-icon">👤</div>
+          <img class="audience-img" src="https://drive.google.com/thumbnail?id=1DSvM6TAZNrVIQKi26z1sKW7pQWbuko8P&sz=w1600" alt="Personas">
           <h3>Personas</h3>
           <p>Importación y venta al detalle. Traemos lo que necesitas directamente para ti, con trámites incluidos.</p>
-          <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20asesoría%20sobre%20importación%20al%20detalle" target="_blank" class="btn btn-lime">Cotizar al detalle</a>
+          <a href="https://wa.me/50672429342?text=Hola%20Equipo%20ElectrOriginc,%20deseo%20asesoría%20sobre%20importación%20al%20detalle" target="_blank" class="btn btn-lime">Cotizar al detalle</a>
         </div>
       </div>
     </div>
@@ -1013,7 +1029,7 @@
             <h3>SUV Híbrida Premium</h3>
             <p>Autonomía eléctrica 60 km · 4x4 · 7 plazas. Importación con garantía oficial y trámites incluidos.</p>
             <div class="card-actions">
-              <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20cotizar%20la%20SUV%20Híbrida%20Premium" target="_blank" class="btn btn-lime">Cotizar</a>
+              <a href="https://wa.me/50672429342?text=Hola%20Equipo%20ElectrOriginc,%20deseo%20cotizar%20la%20SUV%20Híbrida%20Premium" target="_blank" class="btn btn-lime">Cotizar</a>
             </div>
           </div>
         </div>
@@ -1024,7 +1040,7 @@
             <h3>Sedán Eléctrico Premium</h3>
             <p>Autonomía 500+ km · Carga rápida 250 kW · 5 plazas. Cero emisiones, máxima eficiencia.</p>
             <div class="card-actions">
-              <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20cotizar%20el%20Sedán%20Eléctrico%20Premium" target="_blank" class="btn btn-lime">Cotizar</a>
+              <a href="https://wa.me/50672429342?text=Hola%20Equipo%20ElectrOriginc,%20deseo%20cotizar%20el%20Sedán%20Eléctrico%20Premium" target="_blank" class="btn btn-lime">Cotizar</a>
             </div>
           </div>
         </div>
@@ -1042,7 +1058,7 @@
             <h3>ModulHome Smart 40</h3>
             <p>40 m² · Panel solar · Domótica integrada · Diseño minimalista. Importación llave en mano.</p>
             <div class="card-actions">
-              <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20cotizar%20la%20Casa%20Modular%20Smart%2040" target="_blank" class="btn btn-lime">Cotizar</a>
+              <a href="https://wa.me/50672429342?text=Hola%20Equipo%20ElectrOriginc,%20deseo%20cotizar%20la%20Casa%20Modular%20Smart%2040" target="_blank" class="btn btn-lime">Cotizar</a>
             </div>
           </div>
         </div>
@@ -1053,7 +1069,7 @@
             <h3>ModulHome Eco 75</h3>
             <p>75 m² · Autoconsumo solar · Sistema eco-friendly · Domótica completa. Diseño sostenible.</p>
             <div class="card-actions">
-              <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20cotizar%20la%20Casa%20Modular%20Eco%2075" target="_blank" class="btn btn-lime">Cotizar</a>
+              <a href="https://wa.me/50672429342?text=Hola%20Equipo%20ElectrOriginc,%20deseo%20cotizar%20la%20Casa%20Modular%20Eco%2075" target="_blank" class="btn btn-lime">Cotizar</a>
             </div>
           </div>
         </div>
@@ -1071,7 +1087,7 @@
             <h3>PowerCharge Wallbox Pro</h3>
             <p>Cargador de pared 7.4 kW · Conexión WiFi · App móvil · Compatible con todos los VE. Importación con garantía.</p>
             <div class="card-actions">
-              <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20cotizar%20el%20Cargador%20Wallbox%20Pro" target="_blank" class="btn btn-lime">Cotizar</a>
+              <a href="https://wa.me/50672429342?text=Hola%20Equipo%20ElectrOriginc,%20deseo%20cotizar%20el%20Cargador%20Wallbox%20Pro" target="_blank" class="btn btn-lime">Cotizar</a>
             </div>
           </div>
         </div>
@@ -1082,7 +1098,7 @@
             <h3>FastCharge Station 50kW</h3>
             <p>Estación de carga rápida DC 50 kW · Carga en 30 min · Ideal para empresas y parkings públicos.</p>
             <div class="card-actions">
-              <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20cotizar%20la%20Estación%20FastCharge%2050kW" target="_blank" class="btn btn-lime">Cotizar</a>
+              <a href="https://wa.me/50672429342?text=Hola%20Equipo%20ElectrOriginc,%20deseo%20cotizar%20la%20Estación%20FastCharge%2050kW" target="_blank" class="btn btn-lime">Cotizar</a>
             </div>
           </div>
         </div>
@@ -1095,7 +1111,7 @@
     <div class="custom-import">
       <h3>¿No encuentras lo que buscas?</h3>
       <p>Servicio de importación personalizada, cuéntanos qué necesitas y lo traemos directo para ti.</p>
-      <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20solicitar%20una%20cotización%20especial%20de%20importación" target="_blank" class="btn btn-lime">Solicitar cotización especial</a>
+      <a href="https://wa.me/50672429342?text=Hola%20Equipo%20ElectrOriginc,%20deseo%20solicitar%20una%20cotización%20especial%20de%20importación" target="_blank" class="btn btn-lime">Solicitar cotización especial</a>
     </div>
   </section>
 
@@ -1104,22 +1120,18 @@
     <div class="container">
       <div class="trust-grid">
         <div class="trust-item">
-          <div class="trust-icon">🚢</div>
           <h4>Importación Directa</h4>
           <p>Trámites aduaneros incluidos, sin preocupaciones.</p>
         </div>
         <div class="trust-item">
-          <div class="trust-icon">✅</div>
           <h4>Garantía Oficial</h4>
           <p>Todos nuestros productos cuentan con garantía.</p>
         </div>
         <div class="trust-item">
-          <div class="trust-icon">⚡</div>
           <h4>Entrega Rápida</h4>
           <p>Logística eficiente con seguimiento en tiempo real.</p>
         </div>
         <div class="trust-item">
-          <div class="trust-icon">🤝</div>
           <h4>Asesoría Personalizada</h4>
           <p>Te acompañamos en todo el proceso de importación.</p>
         </div>
@@ -1183,7 +1195,7 @@
         </div>
         <div class="footer-col">
           <h4>Contacto</h4>
-          <p>Jonathan Zamora</p>
+          <p>Equipo ElectrOriginc</p>
           <p>WhatsApp: +506 72429342</p>
           <p>Email: info@electroriginc.com</p>
           <p>Alajuela, Costa Rica</p>
@@ -1191,13 +1203,13 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 ElectrOriginc. Todos los derechos reservados. · Alajuela, Costa Rica</p>
+        <p>&copy; 2024 ElectrOriginc. Todos los derechos reservados. · Hecho con innovación</p>
       </div>
     </div>
   </footer>
 
   <!-- BURBUJA FLOTANTE DE WHATSAPP -->
-  <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20asesoría%20sobre%20importaciones" target="_blank" class="whatsapp-float" aria-label="Contactar a un asesor por WhatsApp">
+  <a href="https://wa.me/50672429342?text=Hola%20Equipo%20ElectrOriginc,%20deseo%20asesoría%20sobre%20importaciones" target="_blank" class="whatsapp-float" aria-label="Contactar a un asesor por WhatsApp">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297.149-1.758.867-2.03.967-.273.099-.471.148-.67-.15-.197-.297-.767-.966-.94-1.164-.173-.199-.347-.223-.644-.075-.297.15-1.255.463-2.39-1.198-.883-.852-1.476-1.902-1.65-2.198-.174-.297-.019-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     <span class="wa-label">Contactar a un asesor</span>
   </a>
@@ -1258,6 +1270,19 @@
       prevSlide();
       startSlider();
     }
+
+    function flashZone(zone) {
+      zone.classList.add('flash');
+      setTimeout(function() { zone.classList.remove('flash'); }, 150);
+    }
+
+    document.querySelectorAll('.slider-click-zone').forEach(function(zone) {
+      zone.addEventListener('mousedown', function() { zone.classList.add('flash'); });
+      zone.addEventListener('mouseup', function() { zone.classList.remove('flash'); });
+      zone.addEventListener('mouseleave', function() { zone.classList.remove('flash'); });
+      zone.addEventListener('touchstart', function() { zone.classList.add('flash'); }, { passive: true });
+      zone.addEventListener('touchend', function() { zone.classList.remove('flash'); }, { passive: true });
+    });
 
     function startSlider() {
       slideInterval = setInterval(nextSlide, 5000);
