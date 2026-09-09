@@ -64,8 +64,8 @@
     }
 
     .brand-icon {
-      width: 44px;
-      height: 44px;
+      width: 56px;
+      height: 56px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -539,6 +539,42 @@
       color: var(--text-dim);
     }
 
+    .custom-import {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: 14px;
+      padding: 40px;
+      text-align: center;
+      margin: 0 auto 60px;
+      max-width: 700px;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .custom-import:hover {
+      border-color: rgba(118, 230, 0, 0.4);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(118, 230, 0, 0.15);
+    }
+
+    .custom-import h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+
+    .custom-import p {
+      font-size: 0.98rem;
+      color: var(--text-body);
+      margin-bottom: 24px;
+      line-height: 1.55;
+    }
+
+    .custom-import .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      font-size: 1rem;
+    }
+
     @media (max-width: 768px) {
       .slide-content { padding-left: 20px; padding-right: 20px; }
       .slide-content h1 { font-size: 2.1rem; }
@@ -646,7 +682,7 @@
     <!-- SECCIÓN 1: Vehículos Híbridos y Eléctricos -->
     <div class="container catalog-subsection" id="vehiculos">
       <div class="section-header">
-        <h2>Nuestro Catálogo</h2>
+        <h2>Nuevo Catálogo</h2>
         <p>Importación directa con garantía oficial y trámites incluidos.</p>
       </div>
       <h3>Vehículos Híbridos & Eléctricos</h3>
@@ -655,7 +691,7 @@
 
         <!-- Vehículo 1 -->
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=600&q=80" alt="SUV Híbrida Enchufable">
+          <img src="https://drive.google.com/thumbnail?id=1fwbLnVESpISbMAyfK3NLPJGXEoD2E-Aw&sz=w600" alt="SUV Híbrida Enchufable">
           <div class="card-body">
             <span class="badge-category">Híbrido Enchufable</span>
             <h3>SUV Híbrida Premium</h3>
@@ -668,7 +704,7 @@
 
         <!-- Vehículo 2 -->
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=600&q=80" alt="Sedán Eléctrico">
+          <img src="https://drive.google.com/thumbnail?id=1hGRkpHnwLmx36ycked-tFmTnNlQM05YF&sz=w600" alt="Sedán Eléctrico">
           <div class="card-body">
             <span class="badge-category">100% Eléctrico</span>
             <h3>Sedán Eléctrico Premium</h3>
@@ -725,7 +761,7 @@
 
         <!-- Cargador 1 -->
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1593789382576-e828c8d8b763?auto=format&fit=crop&w=600&q=80" alt="Cargador Wallbox">
+          <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=600&q=80" alt="Cargador Wallbox">
           <div class="card-body">
             <span class="badge-category">Cargador Wallbox</span>
             <h3>PowerCharge Wallbox Pro</h3>
@@ -754,6 +790,15 @@
 
   </section>
 
+  <!-- IMPORTACIÓN PERSONALIZADA -->
+  <section class="container" style="padding-bottom: 80px;">
+    <div class="custom-import">
+      <h3>¿No encuentras lo que buscas?</h3>
+      <p>Servicio de importación personalizada, cuéntanos qué necesitas y lo traemos directo para ti.</p>
+      <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20solicitar%20una%20cotización%20especial%20de%20importación" target="_blank" class="btn btn-lime">Solicitar cotización especial</a>
+    </div>
+  </section>
+
   <!-- FOOTER Y CONTACTO -->
   <footer id="contacto">
     <div class="container">
@@ -772,7 +817,7 @@
         </div>
         <div class="footer-col">
           <h4>Contacto</h4>
-          <p>Jonathan Zamora</p>
+          <p>Ejecutivo Comercial<p>
           <p>WhatsApp: +506 72429342</p>
           <p>Email: info@electroriginc.com</p>
           <p>Alajuela, Costa Rica</p>
