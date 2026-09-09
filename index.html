@@ -4,6 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ElectrOriginc | Importaciones Directas, Movilidad Eléctrica & Casas Modulares</title>
+  <meta name="description" content="ElectrOriginc - Importación directa de vehículos híbridos y eléctricos, casas modulares inteligentes SmartHome y cargadores para vehículos eléctricos. Calidad global a tu alcance. Alajuela, Costa Rica.">
+  <meta name="keywords" content="importación, vehículos eléctricos, vehículos híbridos, casas modulares, SmartHome, cargadores eléctricos, Costa Rica, Alajuela">
+  <meta name="author" content="ElectrOriginc">
+  <meta property="og:title" content="ElectrOriginc | Importaciones Directas, Movilidad Eléctrica & Casas Modulares">
+  <meta property="og:description" content="Importación directa de vehículos híbridos, eléctricos, casas modulares inteligentes y cargadores. Calidad global a tu alcance.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://drive.google.com/thumbnail?id=1sCb_u20H3GcYuVg8wuCvzsM3LTHVp2sj&sz=w1200">
+  <link rel="icon" type="image/png" href="https://drive.google.com/thumbnail?id=1Vje8oHzX95t6O70GZMoD8HdkU40_BEcj&sz=w64">
   <style>
     :root {
       --primary: #16C60C;
@@ -38,6 +46,39 @@
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px;
+    }
+
+    /* LOADER */
+    .loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bg-main);
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.5s, visibility 0.5s;
+    }
+
+    .loader.hide {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .loader-spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid var(--border-card);
+      border-top-color: var(--primary);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
     }
 
     /* HEADER */
@@ -245,6 +286,34 @@
       color: #fff;
     }
 
+    /* FLECHAS DEL CARRUSEL */
+    .slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      background: rgba(11, 15, 21, 0.7);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: background 0.2s, border-color 0.2s;
+      color: #fff;
+      font-size: 1.3rem;
+    }
+
+    .slider-arrow:hover {
+      background: rgba(22, 198, 12, 0.3);
+      border-color: var(--primary);
+    }
+
+    .slider-arrow.prev { left: 20px; }
+    .slider-arrow.next { right: 20px; }
+
     /* Indicadores del Slider */
     .slider-indicators {
       position: absolute;
@@ -399,6 +468,45 @@
       font-size: 0.9rem;
     }
 
+    /* SECCIÓN CONFIANZA */
+    .trust-section {
+      padding: 60px 0;
+      background-color: var(--bg-header);
+      border-top: 1px solid #18202d;
+      border-bottom: 1px solid #18202d;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .trust-item {
+      text-align: center;
+      padding: 20px 15px;
+    }
+
+    .trust-item .trust-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .trust-item h4 {
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .trust-item p {
+      color: var(--text-body);
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
     /* CATÁLOGO */
     .catalog {
       padding: 80px 0;
@@ -529,75 +637,37 @@
       font-size: 0.95rem;
     }
 
-    /* BURBUJA FLOTANTE DE WHATSAPP */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--primary);
-      color: #070a05;
-      padding: 13px 22px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.95rem;
-      box-shadow: 0 6px 20px var(--primary-glow);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .whatsapp-float:hover {
-      transform: scale(1.04);
-      box-shadow: 0 8px 25px rgba(22, 198, 12, 0.6);
-    }
-
-    .whatsapp-float svg {
-      width: 24px;
-      height: 24px;
-      fill: #070a05;
-      flex-shrink: 0;
-    }
-
-    .whatsapp-float .wa-label {
-      white-space: nowrap;
-    }
-
-    /* FOOTER */
-    footer {
+    /* SECCIÓN CONTADORES */
+    .counters-section {
+      padding: 50px 0;
       background-color: var(--bg-header);
-      color: var(--text-body);
-      padding: 60px 0 30px;
       border-top: 1px solid #18202d;
+      border-bottom: 1px solid #18202d;
     }
 
-    .footer-grid {
+    .counters-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 40px;
-      margin-bottom: 40px;
-    }
-
-    .footer-col h4 {
-      color: #fff;
-      font-size: 1.1rem;
-      margin-bottom: 16px;
-      font-weight: 700;
-    }
-
-    .footer-col p {
-      margin-bottom: 9px;
-      font-size: 0.92rem;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid #18202d;
-      padding-top: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 30px;
+      max-width: 900px;
+      margin: 0 auto;
       text-align: center;
-      font-size: 0.85rem;
-      color: var(--text-dim);
+    }
+
+    .counter-item .counter-number {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .counter-item .counter-label {
+      color: var(--text-body);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     /* SECCIÓN IMPORTACIÓN PERSONALIZADA */
@@ -637,6 +707,134 @@
       font-size: 1rem;
     }
 
+    /* BURBUJA FLOTANTE DE WHATSAPP */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--primary);
+      color: #070a05;
+      padding: 13px 22px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 6px 20px var(--primary-glow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.04);
+      box-shadow: 0 8px 25px rgba(22, 198, 12, 0.6);
+    }
+
+    .whatsapp-float svg {
+      width: 24px;
+      height: 24px;
+      fill: #070a05;
+      flex-shrink: 0;
+    }
+
+    .whatsapp-float .wa-label {
+      white-space: nowrap;
+    }
+
+    /* BOTÓN VOLVER ARRIBA */
+    .scroll-top {
+      position: fixed;
+      bottom: 25px;
+      left: 25px;
+      z-index: 9998;
+      width: 44px;
+      height: 44px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      color: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.3rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
+    }
+
+    .scroll-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .scroll-top:hover {
+      transform: scale(1.1);
+      border-color: var(--primary);
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: var(--bg-header);
+      color: var(--text-body);
+      padding: 60px 0 30px;
+      border-top: 1px solid #18202d;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: 1.1rem;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .footer-col p {
+      margin-bottom: 9px;
+      font-size: 0.92rem;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .footer-social a {
+      width: 38px;
+      height: 38px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .footer-social a:hover {
+      transform: scale(1.1);
+      border-color: var(--primary);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #18202d;
+      padding-top: 25px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+    }
+
     @media (max-width: 768px) {
       .slide-content { padding-left: 20px; padding-right: 20px; }
       .slide-content h1 { font-size: 2.1rem; }
@@ -646,10 +844,17 @@
       nav a { margin: 0 10px; }
       .whatsapp-float .wa-label { display: none; }
       .whatsapp-float { padding: 14px; }
+      .slider-arrow { width: 36px; height: 36px; font-size: 1rem; }
+      .brand-icon { width: 70px; height: 70px; }
     }
   </style>
 </head>
 <body>
+
+  <!-- LOADER -->
+  <div class="loader" id="loader">
+    <div class="loader-spinner"></div>
+  </div>
 
   <!-- HEADER -->
   <header>
@@ -677,9 +882,8 @@
     </div>
   </header>
 
-  <!-- CARRUSEL HERO AUTOMÁTICO (Cada 5 segundos) -->
+  <!-- CARRUSEL HERO -->
   <section class="slider-container" id="inicio">
-    <!-- Diapositiva 1: Importación directa -->
     <div class="slide slide-1 active">
       <div class="slide-content">
         <span class="slide-tag">Importaciones Directas</span>
@@ -692,7 +896,6 @@
       </div>
     </div>
 
-    <!-- Diapositiva 2: Movilidad eléctrica -->
     <div class="slide slide-2">
       <div class="slide-content">
         <span class="slide-tag">Movilidad Eléctrica</span>
@@ -705,7 +908,6 @@
       </div>
     </div>
 
-    <!-- Diapositiva 3: Casas modulares -->
     <div class="slide slide-3">
       <div class="slide-content">
         <span class="slide-tag">Casas Modulares</span>
@@ -718,6 +920,10 @@
       </div>
     </div>
 
+    <!-- Flechas del carrusel -->
+    <div class="slider-arrow prev" onclick="prevSlideBtn()">&#10094;</div>
+    <div class="slider-arrow next" onclick="nextSlideBtn()">&#10095;</div>
+
     <!-- Indicadores -->
     <div class="slider-indicators">
       <span class="dot active" onclick="currentSlide(0)"></span>
@@ -726,7 +932,7 @@
     </div>
   </section>
 
-  <!-- BARRA DE TRACKING (RASTREO) -->
+  <!-- BARRA DE TRACKING -->
   <section class="tracking-section" id="rastreo">
     <div class="container tracking-box">
       <h3>📦 Rastrea tu importación</h3>
@@ -742,31 +948,51 @@
   <section class="audience-section">
     <div class="container">
       <div class="audience-grid">
-
-        <!-- Empresas -->
         <div class="audience-card">
           <div class="audience-icon">🏢</div>
           <h3>Empresas</h3>
           <p>Importación y venta por volumen. Soluciones logísticas y comerciales para empresas con pedidos al por mayor.</p>
           <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20asesoría%20sobre%20importación%20por%20volumen%20para%20empresas" target="_blank" class="btn btn-lime">Cotizar por volumen</a>
         </div>
-
-        <!-- Personas -->
         <div class="audience-card">
           <div class="audience-icon">👤</div>
           <h3>Personas</h3>
           <p>Importación y venta al detalle. Traemos lo que necesitas directamente para ti, con trámites incluidos.</p>
           <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20asesoría%20sobre%20importación%20al%20detalle" target="_blank" class="btn btn-lime">Cotizar al detalle</a>
         </div>
-
       </div>
     </div>
   </section>
 
+  <!-- SECCIÓN CONFIANZA -->
+  <section class="trust-section">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-item">
+          <div class="trust-icon">🚢</div>
+          <h4>Importación Directa</h4>
+          <p>Trámites aduaneros incluidos, sin preocupaciones.</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">✅</div>
+          <h4>Garantía Oficial</h4>
+          <p>Todos nuestros productos cuentan con garantía.</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">⚡</div>
+          <h4>Entrega Rápida</h4>
+          <p>Logística eficiente con seguimiento en tiempo real.</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">🤝</div>
+          <h4>Asesoría Personalizada</h4>
+          <p>Te acompañamos en todo el proceso de importación.</p>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- CATÁLOGO -->
   <section class="catalog" id="catalogo">
-
-    <!-- SECCIÓN 1: Vehículos Híbridos y Eléctricos -->
     <div class="container catalog-subsection" id="vehiculos">
       <div class="section-header">
         <h2>Nuevo Catálogo</h2>
@@ -775,8 +1001,6 @@
       <h3>Vehículos Híbridos & Eléctricos</h3>
       <p class="subsection-desc">Importación de vehículos híbridos y eléctricos de las mejores marcas del mundo.</p>
       <div class="grid">
-
-        <!-- Vehículo 1 -->
         <div class="card">
           <img src="https://drive.google.com/thumbnail?id=1fwbLnVESpISbMAyfK3NLPJGXEoD2E-Aw&sz=w600" alt="SUV Híbrida Enchufable">
           <div class="card-body">
@@ -788,8 +1012,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Vehículo 2 -->
         <div class="card">
           <img src="https://drive.google.com/thumbnail?id=1hGRkpHnwLmx36ycked-tFmTnNlQM05YF&sz=w600" alt="Sedán Eléctrico">
           <div class="card-body">
@@ -801,17 +1023,13 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
 
-    <!-- SECCIÓN 2: Casas Modulares Inteligentes SmartHome -->
     <div class="container catalog-subsection" id="casas">
       <h3>Casas Modulares Inteligentes SmartHome</h3>
       <p class="subsection-desc">Importación de casas modulares con tecnología domótica, autoconsumo solar y diseño moderno.</p>
       <div class="grid">
-
-        <!-- Casa Modular 1 -->
         <div class="card">
           <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Casa Modular Smart 40">
           <div class="card-body">
@@ -823,8 +1041,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Casa Modular 2 -->
         <div class="card">
           <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a707?auto=format&fit=crop&w=600&q=80" alt="Casa Modular Eco 75">
           <div class="card-body">
@@ -836,17 +1052,13 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
 
-    <!-- SECCIÓN 3: Cargadores y Estaciones Eléctricas -->
     <div class="container catalog-subsection" id="cargadores">
       <h3>Cargadores para Vehículos Eléctricos & Estaciones Eléctricas</h3>
       <p class="subsection-desc">Importación de cargadores y estaciones de carga para vehículos eléctricos.</p>
       <div class="grid">
-
-        <!-- Cargador 1 -->
         <div class="card">
           <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=600&q=80" alt="Cargador Wallbox">
           <div class="card-body">
@@ -858,8 +1070,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Cargador 2 -->
         <div class="card">
           <img src="https://images.unsplash.com/photo-1610647752706-3bb12232b3a5?auto=format&fit=crop&w=600&q=80" alt="Estación de Carga Rápida">
           <div class="card-body">
@@ -871,10 +1081,32 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
+  </section>
 
+  <!-- CONTADORES -->
+  <section class="counters-section">
+    <div class="container">
+      <div class="counters-grid">
+        <div class="counter-item">
+          <div class="counter-number" data-target="50">0</div>
+          <div class="counter-label">Vehículos Importados</div>
+        </div>
+        <div class="counter-item">
+          <div class="counter-number" data-target="100">0</div>
+          <div class="counter-label">Clientes Satisfechos</div>
+        </div>
+        <div class="counter-item">
+          <div class="counter-number" data-target="15">0</div>
+          <div class="counter-label">Casas Modulares</div>
+        </div>
+        <div class="counter-item">
+          <div class="counter-number" data-target="5">0</div>
+          <div class="counter-label">Años de Experiencia</div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- IMPORTACIÓN PERSONALIZADA -->
@@ -886,13 +1118,18 @@
     </div>
   </section>
 
-  <!-- FOOTER Y CONTACTO -->
+  <!-- FOOTER -->
   <footer id="contacto">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
           <h4>ElectrOriginc</h4>
           <p>Importación directa de vehículos híbridos, eléctricos, casas modulares inteligentes y cargadores. Calidad global a tu alcance.</p>
+          <div class="footer-social">
+            <a href="https://wa.me/50672429342" target="_blank" title="WhatsApp">💬</a>
+            <a href="#" title="Instagram">📷</a>
+            <a href="#" title="Facebook">📘</a>
+          </div>
         </div>
         <div class="footer-col">
           <h4>Navegación</h4>
@@ -923,8 +1160,19 @@
     <span class="wa-label">Contactar a un asesor</span>
   </a>
 
-  <!-- SCRIPT DEL CARRUSEL -->
+  <!-- BOTÓN VOLVER ARRIBA -->
+  <button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Volver arriba">↑</button>
+
+  <!-- SCRIPTS -->
   <script>
+    // LOADER
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        document.getElementById('loader').classList.add('hide');
+      }, 500);
+    });
+
+    // CARRUSEL
     let slideIndex = 0;
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
@@ -957,20 +1205,27 @@
       startSlider();
     }
 
+    function nextSlideBtn() {
+      clearInterval(slideInterval);
+      nextSlide();
+      startSlider();
+    }
+
+    function prevSlideBtn() {
+      clearInterval(slideInterval);
+      prevSlide();
+      startSlider();
+    }
+
     function startSlider() {
       slideInterval = setInterval(nextSlide, 5000);
     }
 
-    // Swipe con los dedos
     function handleSwipe() {
       const diff = touchStartX - touchEndX;
       if (Math.abs(diff) > 50) {
         clearInterval(slideInterval);
-        if (diff > 0) {
-          nextSlide();
-        } else {
-          prevSlide();
-        }
+        if (diff > 0) { nextSlide(); } else { prevSlide(); }
         startSlider();
       }
     }
@@ -986,7 +1241,7 @@
 
     startSlider();
 
-    // Animación de tarjetas al hacer scroll
+    // ANIMACIÓN DE TARJETAS
     const cards = document.querySelectorAll('.card');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
@@ -998,8 +1253,41 @@
         }
       });
     }, { threshold: 0.15 });
-
     cards.forEach(card => observer.observe(card));
+
+    // CONTADORES ANIMADOS
+    const counters = document.querySelectorAll('.counter-number');
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const target = parseInt(entry.target.dataset.target);
+          let current = 0;
+          const increment = target / 40;
+          const updateCounter = () => {
+            current += increment;
+            if (current < target) {
+              entry.target.textContent = Math.ceil(current) + '+';
+              requestAnimationFrame(updateCounter);
+            } else {
+              entry.target.textContent = target + '+';
+            }
+          };
+          updateCounter();
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(c => counterObserver.observe(c));
+
+    // BOTÓN VOLVER ARRIBA
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 400) {
+        scrollTopBtn.classList.add('show');
+      } else {
+        scrollTopBtn.classList.remove('show');
+      }
+    });
   </script>
 
 </body>
