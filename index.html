@@ -20,576 +20,120 @@
       --text-body: #9ca3af;
       --text-dim: #64748b;
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    }
-
-    body {
-      background-color: var(--bg-main);
-      color: var(--text-main);
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    header {
-      background-color: var(--bg-header);
-      border-bottom: 1px solid #18202c;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .nav-wrapper {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 0;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      text-decoration: none;
-      user-select: none;
-    }
-
-    .brand-icon {
-      width: 64px;
-      height: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .brand-icon img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .brand-title {
-      color: #ffffff;
-      font-size: 1.55rem;
-      font-weight: 700;
-      letter-spacing: -0.3px;
-      line-height: 1.1;
-    }
-
-    .brand-subtitle {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 3px;
-    }
-
-    .brand-subtitle .sub-text {
-      font-size: 0.48rem;
-      font-weight: 600;
-      letter-spacing: 1.4px;
-      color: #7e8b9b;
-      white-space: nowrap;
-    }
-
-    .brand-subtitle .sub-line {
-      flex: 1;
-      height: 1px;
-      background: #3b4654;
-      min-width: 14px;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-    }
-
-    nav a {
-      color: var(--text-muted);
-      text-decoration: none;
-      margin-left: 24px;
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: color 0.2s;
-    }
-
-    nav a:hover, nav a.active {
-      color: var(--primary);
-    }
-
-    .slider-container {
-      position: relative;
-      height: 520px;
-      overflow: hidden;
-      background: #000;
-    }
-
-    .slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-    }
-
-    .slide.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .slide-1 {
-      background-image: linear-gradient(to right, rgba(11, 15, 21, 0.92) 35%, rgba(11, 15, 21, 0.45)),
-        url('https://drive.google.com/thumbnail?id=1sCb_u20H3GcYuVg8wuCvzsM3LTHVp2sj&sz=w1600');
-    }
-
-    .slide-2 {
-      background-image: linear-gradient(to right, rgba(11, 15, 21, 0.92) 35%, rgba(11, 15, 21, 0.45)),
-        url('https://drive.google.com/thumbnail?id=1wEfIZVBh_oi5r85ALies8l4LBf5wHeQh&sz=w1600');
-    }
-
-    .slide-3 {
-      background-image: linear-gradient(to right, rgba(11, 15, 21, 0.92) 35%, rgba(11, 15, 21, 0.45)),
-        url('https://drive.google.com/thumbnail?id=1OKQkgD6bCqT3Ebzs97j1RRysHvcVczkz&sz=w1600');
-    }
-
-    .slide-content {
-      color: #fff;
-      max-width: 650px;
-      padding-left: 60px;
-    }
-
-    .slide-tag {
-      display: inline-block;
-      text-transform: uppercase;
-      font-size: 0.82rem;
-      letter-spacing: 1.5px;
-      color: var(--primary);
-      font-weight: 700;
-      margin-bottom: 14px;
-    }
-
-    .slide-content h1 {
-      font-size: 2.7rem;
-      line-height: 1.22;
-      margin-bottom: 18px;
-      font-weight: 800;
-    }
-
-    .slide-content p {
-      font-size: 1.08rem;
-      color: #cbd5e1;
-      margin-bottom: 30px;
-      line-height: 1.5;
-    }
-
-    .hero-btn-group {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 26px;
-      border-radius: 8px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.25s ease;
-      font-size: 0.95rem;
-      border: none;
-      cursor: pointer;
-    }
-
-    .btn-lime {
-      background-color: var(--primary);
-      color: #070a05;
-      box-shadow: 0 0 16px var(--primary-glow);
-    }
-    .btn-lime:hover {
-      background-color: var(--primary-hover);
-      box-shadow: 0 0 24px rgba(22, 198, 12, 0.6);
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      background-color: transparent;
-      color: var(--primary);
-      border: 1.5px solid var(--primary);
-    }
-    .btn-outline:hover {
-      background-color: rgba(22, 198, 12, 0.1);
-      color: #fff;
-    }
-
-    .slider-indicators {
-      position: absolute;
-      bottom: 25px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      z-index: 10;
-    }
-
-    .dot {
-      width: 8px;
-      height: 8px;
-      background: rgba(255, 255, 255, 0.3);
-      border-radius: 50%;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-
-    .dot.active {
-      background: var(--primary);
-      width: 22px;
-      border-radius: 4px;
-    }
-
-    .tracking-section {
-      background-color: var(--bg-card);
-      padding: 35px 0;
-      border-bottom: 1px solid var(--border-card);
-    }
-
-    .tracking-box {
-      text-align: center;
-    }
-
-    .tracking-box h3 {
-      color: #ffffff;
-      font-size: 1.35rem;
-      font-weight: 700;
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-
-    .tracking-form {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      max-width: 620px;
-      margin: 0 auto 14px;
-    }
-
-    .tracking-form input {
-      flex: 1;
-      padding: 13px 18px;
-      border-radius: 8px;
-      background-color: var(--input-bg);
-      border: 1px solid var(--input-border);
-      color: #fff;
-      outline: none;
-      font-size: 0.95rem;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-
-    .tracking-form input::placeholder {
-      color: #64748b;
-    }
-
-    .tracking-form input:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 10px rgba(22, 198, 12, 0.2);
-    }
-
-    .tracking-form button {
-      background: var(--primary);
-      color: #070a05;
-      border: none;
-      padding: 13px 25px;
-      border-radius: 8px;
-      font-weight: 700;
-      cursor: pointer;
-      box-shadow: 0 0 16px var(--primary-glow);
-      transition: all 0.25s ease;
-    }
-
-    .tracking-form button:hover {
-      background: var(--primary-hover);
-      box-shadow: 0 0 24px rgba(22, 198, 12, 0.6);
-    }
-
-    .tracking-steps {
-      color: var(--text-body);
-      font-size: 0.85rem;
-    }
-
-    .catalog {
-      padding: 80px 0;
-      background-color: var(--bg-main);
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-
-    .section-header h2 {
-      font-size: 2.4rem;
-      font-weight: 800;
-      color: #ffffff;
-      letter-spacing: -0.5px;
-      margin-bottom: 6px;
-    }
-
-    .section-header p {
-      color: var(--text-body);
-      font-size: 1.05rem;
-    }
-
-    .catalog-subsection {
-      margin-bottom: 70px;
-    }
-
-    .catalog-subsection h3 {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 6px;
-      padding-bottom: 10px;
-      border-bottom: 3px solid var(--primary);
-      display: inline-block;
-    }
-
-    .catalog-subsection .subsection-desc {
-      color: var(--text-body);
-      font-size: 0.98rem;
-      margin-bottom: 28px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 28px;
-    }
-
-    .card {
-      background: var(--bg-card);
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid var(--border-card);
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-      opacity: 0;
-      transform: translateY(40px);
-    }
-
-    .card.visible {
-      animation: fadeInCard 0.7s ease forwards;
-    }
-
-    @keyframes fadeInCard {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(22, 198, 12, 0.4);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(22, 198, 12, 0.15);
-    }
-
-    .card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      display: block;
-      border-bottom: 1px solid #1d2532;
-    }
-
-    .card-body {
-      padding: 24px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .badge-category {
-      font-size: 0.72rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      color: var(--primary);
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-      display: inline-block;
-    }
-
-    .card-body h3 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: #ffffff;
-    }
-
-    .card-body p {
-      font-size: 0.92rem;
-      color: var(--text-body);
-      line-height: 1.55;
-      margin-bottom: 24px;
-    }
-
-    .card-actions {
-      margin-top: auto;
-    }
-
-    .card-actions .btn {
-      width: 100%;
-      text-align: center;
-      padding: 12px;
-      font-size: 0.95rem;
-    }
-
-    .whatsapp-float {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--primary);
-      color: #070a05;
-      padding: 13px 22px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.95rem;
-      box-shadow: 0 6px 20px var(--primary-glow);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .whatsapp-float:hover {
-      transform: scale(1.04);
-      box-shadow: 0 8px 25px rgba(22, 198, 12, 0.6);
-    }
-
-    .whatsapp-float svg {
-      width: 24px;
-      height: 24px;
-      fill: #070a05;
-      flex-shrink: 0;
-    }
-
-    .whatsapp-float .wa-label {
-      white-space: nowrap;
-    }
-
-    footer {
-      background-color: var(--bg-header);
-      color: var(--text-body);
-      padding: 60px 0 30px;
-      border-top: 1px solid #18202d;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 40px;
-      margin-bottom: 40px;
-    }
-
-    .footer-col h4 {
-      color: #fff;
-      font-size: 1.1rem;
-      margin-bottom: 16px;
-      font-weight: 700;
-    }
-
-    .footer-col p {
-      margin-bottom: 9px;
-      font-size: 0.92rem;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid #18202d;
-      padding-top: 25px;
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--text-dim);
-    }
-
-    .custom-import {
-      background: var(--bg-card);
-      border: 1px solid var(--border-card);
-      border-radius: 14px;
-      padding: 40px;
-      text-align: center;
-      margin: 0 auto 60px;
-      max-width: 700px;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .custom-import:hover {
-      border-color: rgba(22, 198, 12, 0.4);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(22, 198, 12, 0.15);
-    }
-
-    .custom-import h3 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 12px;
-    }
-
-    .custom-import p {
-      font-size: 0.98rem;
-      color: var(--text-body);
-      margin-bottom: 24px;
-      line-height: 1.55;
-    }
-
-    .custom-import .btn {
-      display: inline-block;
-      padding: 14px 32px;
-      font-size: 1rem;
-    }
-
-    @media (max-width: 768px) {
-      .slide-content { padding-left: 20px; padding-right: 20px; }
-      .slide-content h1 { font-size: 2.1rem; }
-      .slider-container { height: 500px; }
-      .tracking-form { flex-direction: column; padding: 0 10px; }
-      .nav-wrapper { flex-direction: column; gap: 15px; }
-      nav a { margin: 0 10px; }
-      .whatsapp-float .wa-label { display: none; }
-      .whatsapp-float { padding: 14px; }
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: var(--bg-main); color: var(--text-main); line-height: 1.6; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    header { background-color: var(--bg-header); border-bottom: 1px solid #18202c; position: sticky; top: 0; z-index: 1000; }
+    .nav-wrapper { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; }
+    .brand { display: flex; align-items: center; gap: 8px; text-decoration: none; user-select: none; }
+    .brand-icon { width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .brand-icon img { width: 100%; height: 100%; object-fit: contain; }
+    .brand-text { display: flex; flex-direction: column; justify-content: center; }
+    .brand-title { color: #ffffff; font-size: 1.55rem; font-weight: 700; letter-spacing: -0.3px; line-height: 1.1; }
+    .brand-subtitle { display: flex; align-items: center; gap: 6px; margin-top: 3px; }
+    .brand-subtitle .sub-text { font-size: 0.48rem; font-weight: 600; letter-spacing: 1.4px; color: #7e8b9b; white-space: nowrap; }
+    .brand-subtitle .sub-line { flex: 1; height: 1px; background: #3b4654; min-width: 14px; }
+    nav { display: flex; align-items: center; }
+    nav a { color: var(--text-muted); text-decoration: none; margin-left: 24px; font-weight: 500; font-size: 0.95rem; transition: color 0.2s; }
+    nav a:hover, nav a.active { color: var(--primary); }
+    .slider-container { position: relative; height: 520px; overflow: hidden; background: #000; }
+    .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; visibility: hidden; transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out; background-size: cover; background-position: center; display: flex; align-items: center; }
+    .slide.active { opacity: 1; visibility: visible; }
+    .slide-1 { background-image: linear-gradient(to right, rgba(11, 15, 21, 0.92) 35%, rgba(11, 15, 21, 0.45)), url('https://drive.google.com/thumbnail?id=1sCb_u20H3GcYuVg8wuCvzsM3LTHVp2sj&sz=w1600'); }
+    .slide-2 { background-image: linear-gradient(to right, rgba(11, 15, 21, 0.92) 35%, rgba(11, 15, 21, 0.45)), url('https://drive.google.com/thumbnail?id=1wEfIZVBh_oi5r85ALies8l4LBf5wHeQh&sz=w1600'); }
+    .slide-3 { background-image: linear-gradient(to right, rgba(11, 15, 21, 0.92) 35%, rgba(11, 15, 21, 0.45)), url('https://drive.google.com/thumbnail?id=1OKQkgD6bCqT3Ebzs97j1RRysHvcVczkz&sz=w1600'); }
+    .slide-content { color: #fff; max-width: 650px; padding-left: 60px; }
+    .slide-tag { display: inline-block; text-transform: uppercase; font-size: 0.82rem; letter-spacing: 1.5px; color: var(--primary); font-weight: 700; margin-bottom: 14px; }
+    .slide-content h1 { font-size: 2.7rem; line-height: 1.22; margin-bottom: 18px; font-weight: 800; }
+    .slide-content p { font-size: 1.08rem; color: #cbd5e1; margin-bottom: 30px; line-height: 1.5; }
+    .hero-btn-group { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn { display: inline-block; padding: 12px 26px; border-radius: 8px; font-weight: 700; text-decoration: none; transition: all 0.25s ease; font-size: 0.95rem; border: none; cursor: pointer; }
+    .btn-lime { background-color: var(--primary); color: #070a05; box-shadow: 0 0 16px var(--primary-glow); }
+    .btn-lime:hover { background-color: var(--primary-hover); box-shadow: 0 0 24px rgba(22, 198, 12, 0.6); transform: translateY(-2px); }
+    .btn-outline { background-color: transparent; color: var(--primary); border: 1.5px solid var(--primary); }
+    .btn-outline:hover { background-color: rgba(22, 198, 12, 0.1); color: #fff; }
+    .slider-indicators { position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 8px; z-index: 10; }
+    .dot { width: 8px; height: 8px; background: rgba(255, 255, 255, 0.3); border-radius: 50%; cursor: pointer; transition: all 0.3s; }
+    .dot.active { background: var(--primary); width: 22px; border-radius: 4px; }
+    .tracking-section { background-color: var(--bg-card); padding: 35px 0; border-bottom: 1px solid var(--border-card); }
+    .tracking-box { text-align: center; }
+    .tracking-box h3 { color: #ffffff; font-size: 1.35rem; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+    .tracking-form { display: flex; justify-content: center; gap: 12px; max-width: 620px; margin: 0 auto 14px; }
+    .tracking-form input { flex: 1; padding: 13px 18px; border-radius: 8px; background-color: var(--input-bg); border: 1px solid var(--input-border); color: #fff; outline: none; font-size: 0.95rem; transition: border-color 0.2s, box-shadow 0.2s; }
+    .tracking-form input::placeholder { color: #64748b; }
+    .tracking-form input:focus { border-color: var(--primary); box-shadow: 0 0 10px rgba(22, 198, 12, 0.2); }
+    .tracking-form button { background: var(--primary); color: #070a05; border: none; padding: 13px 25px; border-radius: 8px; font-weight: 700; cursor: pointer; box-shadow: 0 0 16px var(--primary-glow); transition: all 0.25s ease; }
+    .tracking-form button:hover { background: var(--primary-hover); box-shadow: 0 0 24px rgba(22, 198, 12, 0.6); }
+    .tracking-steps { color: var(--text-body); font-size: 0.85rem; }
+    .catalog { padding: 80px 0; background-color: var(--bg-main); }
+    .section-header { text-align: center; margin-bottom: 50px; }
+    .section-header h2 { font-size: 2.4rem; font-weight: 800; color: #ffffff; letter-spacing: -0.5px; margin-bottom: 6px; }
+    .section-header p { color: var(--text-body); font-size: 1.05rem; }
+    .catalog-subsection { margin-bottom: 70px; }
+    .catalog-subsection h3 { font-size: 1.6rem; font-weight: 700; color: #ffffff; margin-bottom: 6px; padding-bottom: 10px; border-bottom: 3px solid var(--primary); display: inline-block; }
+    .catalog-subsection .subsection-desc { color: var(--text-body); font-size: 0.98rem; margin-bottom: 28px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
+    .card { background: var(--bg-card); border-radius: 14px; overflow: hidden; border: 1px solid var(--border-card); display: flex; flex-direction: column; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; opacity: 0; transform: translateY(40px); }
+    .card.visible { animation: fadeInCard 0.7s ease forwards; }
+    @keyframes fadeInCard { to { opacity: 1; transform: translateY(0); } }
+    .card:hover { transform: translateY(-5px); border-color: rgba(22, 198, 12, 0.4); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(22, 198, 12, 0.15); }
+    .card img { width: 100%; height: 220px; object-fit: cover; display: block; border-bottom: 1px solid #1d2532; }
+    .card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .badge-category { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: var(--primary); letter-spacing: 1px; margin-bottom: 8px; display: inline-block; }
+    .card-body h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; color: #ffffff; }
+    .card-body p { font-size: 0.92rem; color: var(--text-body); line-height: 1.55; margin-bottom: 24px; }
+    .card-actions { margin-top: auto; }
+    .card-actions .btn { width: 100%; text-align: center; padding: 12px; font-size: 0.95rem; }
+    .whatsapp-float { position: fixed; bottom: 25px; right: 25px; z-index: 9999; display: flex; align-items: center; gap: 10px; background: var(--primary); color: #070a05; padding: 13px 22px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.95rem; box-shadow: 0 6px 20px var(--primary-glow); transition: transform 0.2s, box-shadow 0.2s; }
+    .whatsapp-float:hover { transform: scale(1.04); box-shadow: 0 8px 25px rgba(22, 198, 12, 0.6); }
+    .whatsapp-float svg { width: 24px; height: 24px; fill: #070a05; flex-shrink: 0; }
+    .whatsapp-float .wa-label { white-space: nowrap; }
+    footer { background-color: var(--bg-header); color: var(--text-body); padding: 60px 0 30px; border-top: 1px solid #18202d; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 40px; margin-bottom: 40px; }
+    .footer-col h4 { color: #fff; font-size: 1.1rem; margin-bottom: 16px; font-weight: 700; }
+    .footer-col p { margin-bottom: 9px; font-size: 0.92rem; }
+    .footer-bottom { border-top: 1px solid #18202d; padding-top: 25px; text-align: center; font-size: 0.85rem; color: var(--text-dim); }
+    .custom-import { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: 14px; padding: 40px; text-align: center; margin: 0 auto 60px; max-width: 700px; transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+    .custom-import:hover { border-color: rgba(22, 198, 12, 0.4); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(22, 198, 12, 0.15); }
+    .custom-import h3 { font-size: 1.5rem; font-weight: 700; color: #ffffff; margin-bottom: 12px; }
+    .custom-import p { font-size: 0.98rem; color: var(--text-body); margin-bottom: 24px; line-height: 1.55; }
+    .custom-import .btn { display: inline-block; padding: 14px 32px; font-size: 1rem; }
+    body.light-mode { --bg-main: #f1f5f9; --bg-header: #ffffff; --bg-card: #ffffff; --border-card: #e2e8f0; --input-bg: #f8fafc; --input-border: #e2e8f0; --text-main: #1e293b; --text-muted: #64748b; --text-body: #475569; --text-dim: #94a3b8; }
+    body.light-mode header { border-bottom: 1px solid #e2e8f0; }
+    body.light-mode .tracking-section { background-color: #f8fafc; border-bottom: 1px solid #e2e8f0; }
+    body.light-mode footer { border-top: 1px solid #e2e8f0; }
+    body.light-mode .footer-bottom { border-top: 1px solid #e2e8f0; }
+    body.light-mode .card img { border-bottom: 1px solid #f1f5f9; }
+    .theme-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: 10000; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s; }
+    .theme-modal-overlay.show { opacity: 1; visibility: visible; }
+    .theme-modal { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: 16px; padding: 35px 30px; max-width: 380px; width: 90%; text-align: center; transform: scale(0.9); transition: transform 0.3s; }
+    .theme-modal-overlay.show .theme-modal { transform: scale(1); }
+    .theme-modal-icon { font-size: 2.5rem; margin-bottom: 15px; }
+    .theme-modal h3 { color: #ffffff; font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; }
+    body.light-mode .theme-modal h3 { color: #1e293b; }
+    .theme-modal p { color: var(--text-body); font-size: 0.95rem; margin-bottom: 25px; line-height: 1.5; }
+    .theme-modal-buttons { display: flex; gap: 12px; justify-content: center; }
+    .theme-modal-buttons .btn { padding: 12px 22px; font-size: 0.9rem; }
+    .btn-ghost { background: transparent; color: var(--text-body); border: 1px solid var(--border-card); }
+    .btn-ghost:hover { background: var(--bg-card); color: #fff; }
+    .theme-toggle { position: fixed; top: 20px; left: 20px; z-index: 9998; background: var(--bg-card); border: 1px solid var(--border-card); color: var(--primary); width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.2rem; transition: transform 0.2s, border-color 0.2s; }
+    .theme-toggle:hover { transform: scale(1.1); border-color: var(--primary); }
+    @media (max-width: 768px) { .slide-content { padding-left: 20px; padding-right: 20px; } .slide-content h1 { font-size: 2.1rem; } .slider-container { height: 500px; } .tracking-form { flex-direction: column; padding: 0 10px; } .nav-wrapper { flex-direction: column; gap: 15px; } nav a { margin: 0 10px; } .whatsapp-float .wa-label { display: none; } .whatsapp-float { padding: 14px; } }
   </style>
 </head>
 <body>
-
-  <!-- HEADER -->
+  <button class="theme-toggle" onclick="toggleTheme()" id="themeToggleBtn" title="Cambiar tema">🌙</button>
+  <div class="theme-modal-overlay" id="themeModal">
+    <div class="theme-modal">
+      <div class="theme-modal-icon" id="themeModalIcon">☀️</div>
+      <h3 id="themeModalTitle">¿Deseas activar el modo claro?</h3>
+      <p id="themeModalDesc">Puedes cambiar entre modo claro y oscuro en cualquier momento con el botón superior izquierdo.</p>
+      <div class="theme-modal-buttons">
+        <button class="btn btn-lime" id="themeModalYes" onclick="activateLightMode()">Sí, activar modo claro</button>
+        <button class="btn btn-ghost" onclick="closeThemeModal()">No, mantener oscuro</button>
+      </div>
+    </div>
+  </div>
   <header>
     <div class="container nav-wrapper">
       <a href="#" class="brand">
@@ -614,8 +158,6 @@
       </nav>
     </div>
   </header>
-
-  <!-- CARRUSEL HERO -->
   <section class="slider-container" id="inicio">
     <div class="slide slide-1 active">
       <div class="slide-content">
@@ -628,7 +170,6 @@
         </div>
       </div>
     </div>
-
     <div class="slide slide-2">
       <div class="slide-content">
         <span class="slide-tag">Movilidad Eléctrica</span>
@@ -640,7 +181,6 @@
         </div>
       </div>
     </div>
-
     <div class="slide slide-3">
       <div class="slide-content">
         <span class="slide-tag">Casas Modulares</span>
@@ -652,15 +192,12 @@
         </div>
       </div>
     </div>
-
     <div class="slider-indicators">
       <span class="dot active" onclick="currentSlide(0)"></span>
       <span class="dot" onclick="currentSlide(1)"></span>
       <span class="dot" onclick="currentSlide(2)"></span>
     </div>
   </section>
-
-  <!-- TRACKING -->
   <section class="tracking-section" id="rastreo">
     <div class="container tracking-box">
       <h3>📦 Rastrea tu importación</h3>
@@ -671,10 +208,7 @@
       <p class="tracking-steps">Recibirás actualizaciones en tiempo real: Origen → Tránsito → Aduana → Entrega</p>
     </div>
   </section>
-
-  <!-- CATÁLOGO -->
   <section class="catalog" id="catalogo">
-
     <div class="container catalog-subsection" id="vehiculos">
       <div class="section-header">
         <h2>Nuevo Catálogo</h2>
@@ -683,7 +217,6 @@
       <h3>Vehículos Híbridos & Eléctricos</h3>
       <p class="subsection-desc">Importación de vehículos híbridos y eléctricos de las mejores marcas del mundo.</p>
       <div class="grid">
-
         <div class="card">
           <img src="https://drive.google.com/thumbnail?id=1fwbLnVESpISbMAyfK3NLPJGXEoD2E-Aw&sz=w600" alt="SUV Híbrida Enchufable">
           <div class="card-body">
@@ -695,7 +228,6 @@
             </div>
           </div>
         </div>
-
         <div class="card">
           <img src="https://drive.google.com/thumbnail?id=1hGRkpHnwLmx36ycked-tFmTnNlQM05YF&sz=w600" alt="Sedán Eléctrico">
           <div class="card-body">
@@ -707,15 +239,12 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
-
     <div class="container catalog-subsection" id="casas">
       <h3>Casas Modulares Inteligentes SmartHome</h3>
       <p class="subsection-desc">Importación de casas modulares con tecnología domótica, autoconsumo solar y diseño moderno.</p>
       <div class="grid">
-
         <div class="card">
           <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Casa Modular Smart 40">
           <div class="card-body">
@@ -727,7 +256,6 @@
             </div>
           </div>
         </div>
-
         <div class="card">
           <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a707?auto=format&fit=crop&w=600&q=80" alt="Casa Modular Eco 75">
           <div class="card-body">
@@ -739,15 +267,12 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
-
     <div class="container catalog-subsection" id="cargadores">
       <h3>Cargadores para Vehículos Eléctricos & Estaciones Eléctricas</h3>
       <p class="subsection-desc">Importación de cargadores y estaciones de carga para vehículos eléctricos.</p>
       <div class="grid">
-
         <div class="card">
           <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=600&q=80" alt="Cargador Wallbox">
           <div class="card-body">
@@ -759,7 +284,6 @@
             </div>
           </div>
         </div>
-
         <div class="card">
           <img src="https://images.unsplash.com/photo-1610647752706-3bb12232b3a5?auto=format&fit=crop&w=600&q=80" alt="Estación de Carga Rápida">
           <div class="card-body">
@@ -771,13 +295,9 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
-
   </section>
-
-  <!-- IMPORTACIÓN PERSONALIZADA -->
   <section class="container" style="padding-bottom: 80px;">
     <div class="custom-import">
       <h3>¿No encuentras lo que buscas?</h3>
@@ -785,8 +305,6 @@
       <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20solicitar%20una%20cotización%20especial%20de%20importación" target="_blank" class="btn btn-lime">Solicitar cotización especial</a>
     </div>
   </section>
-
-  <!-- FOOTER -->
   <footer id="contacto">
     <div class="container">
       <div class="footer-grid">
@@ -816,14 +334,10 @@
       </div>
     </div>
   </footer>
-
-  <!-- BURBUJA FLOTANTE DE WHATSAPP -->
   <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20asesoría%20sobre%20importaciones" target="_blank" class="whatsapp-float" aria-label="Contactar a un asesor por WhatsApp">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297.149-1.758.867-2.03.967-.273.099-.471.148-.67-.15-.197-.297-.767-.966-.94-1.164-.173-.199-.347-.223-.644-.075-.297.15-1.255.463-2.39-1.198-.883-.852-1.476-1.902-1.65-2.198-.174-.297-.019-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     <span class="wa-label">Contactar a un asesor</span>
   </a>
-
-  <!-- SCRIPT -->
   <script>
     let slideIndex = 0;
     const slides = document.querySelectorAll('.slide');
@@ -832,73 +346,24 @@
     let slideInterval;
     let touchStartX = 0;
     let touchEndX = 0;
-
-    function showSlide(index) {
-      slides.forEach(s => s.classList.remove('active'));
-      dots.forEach(d => d.classList.remove('active'));
-      slides[index].classList.add('active');
-      dots[index].classList.add('active');
-      slideIndex = index;
-    }
-
-    function nextSlide() {
-      slideIndex = (slideIndex + 1) % slides.length;
-      showSlide(slideIndex);
-    }
-
-    function prevSlide() {
-      slideIndex = (slideIndex - 1 + slides.length) % slides.length;
-      showSlide(slideIndex);
-    }
-
-    function currentSlide(index) {
-      clearInterval(slideInterval);
-      showSlide(index);
-      startSlider();
-    }
-
-    function startSlider() {
-      slideInterval = setInterval(nextSlide, 5000);
-    }
-
-    function handleSwipe() {
-      const diff = touchStartX - touchEndX;
-      if (Math.abs(diff) > 50) {
-        clearInterval(slideInterval);
-        if (diff > 0) {
-          nextSlide();
-        } else {
-          prevSlide();
-        }
-        startSlider();
-      }
-    }
-
-    slider.addEventListener('touchstart', function(e) {
-      touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-
-    slider.addEventListener('touchend', function(e) {
-      touchEndX = e.changedTouches[0].screenX;
-      handleSwipe();
-    }, { passive: true });
-
+    function showSlide(index) { slides.forEach(s => s.classList.remove('active')); dots.forEach(d => d.classList.remove('active')); slides[index].classList.add('active'); dots[index].classList.add('active'); slideIndex = index; }
+    function nextSlide() { slideIndex = (slideIndex + 1) % slides.length; showSlide(slideIndex); }
+    function prevSlide() { slideIndex = (slideIndex - 1 + slides.length) % slides.length; showSlide(slideIndex); }
+    function currentSlide(index) { clearInterval(slideInterval); showSlide(index); startSlider(); }
+    function startSlider() { slideInterval = setInterval(nextSlide, 5000); }
+    function handleSwipe() { const diff = touchStartX - touchEndX; if (Math.abs(diff) > 50) { clearInterval(slideInterval); if (diff > 0) { nextSlide(); } else { prevSlide(); } startSlider(); } }
+    slider.addEventListener('touchstart', function(e) { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+    slider.addEventListener('touchend', function(e) { touchEndX = e.changedTouches[0].screenX; handleSwipe(); }, { passive: true });
     startSlider();
-
     const cards = document.querySelectorAll('.card');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, i * 150);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-
+    const observer = new IntersectionObserver((entries) => { entries.forEach((entry, i) => { if (entry.isIntersecting) { setTimeout(() => { entry.target.classList.add('visible'); }, i * 150); observer.unobserve(entry.target); } }); }, { threshold: 0.15 });
     cards.forEach(card => observer.observe(card));
+    const themeModal = document.getElementById('themeModal');
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    if (!localStorage.getItem('themeChoice')) { setTimeout(() => { themeModal.classList.add('show'); }, 1500); } else if (localStorage.getItem('themeChoice') === 'light') { document.body.classList.add('light-mode'); themeToggleBtn.textContent = '🌙'; } else { themeToggleBtn.textContent = '☀️'; }
+    function activateLightMode() { document.body.classList.add('light-mode'); localStorage.setItem('themeChoice', 'light'); themeToggleBtn.textContent = '🌙'; closeThemeModal(); setTimeout(() => { document.getElementById('themeModalIcon').textContent = '🌙'; document.getElementById('themeModalTitle').textContent = '¿Volver al modo oscuro?'; document.getElementById('themeModalDesc').textContent = 'Si prefieres el tema oscuro, puedes cambiar ahora o en cualquier momento con el botón superior izquierdo.'; document.getElementById('themeModalYes').textContent = 'Sí, volver a oscuro'; document.getElementById('themeModalYes').onclick = function() { document.body.classList.remove('light-mode'); localStorage.setItem('themeChoice', 'dark'); themeToggleBtn.textContent = '☀️'; closeThemeModal(); }; themeModal.classList.add('show'); }, 800); }
+    function closeThemeModal() { if (!localStorage.getItem('themeChoice')) { localStorage.setItem('themeChoice', 'dark'); } themeModal.classList.remove('show'); }
+    function toggleTheme() { if (document.body.classList.contains('light-mode')) { document.body.classList.remove('light-mode'); localStorage.setItem('themeChoice', 'dark'); themeToggleBtn.textContent = '☀️'; } else { document.body.classList.add('light-mode'); localStorage.setItem('themeChoice', 'light'); themeToggleBtn.textContent = '🌙'; } }
   </script>
-
 </body>
 </html>
