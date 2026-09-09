@@ -6,9 +6,9 @@
   <title>ElectrOriginc | Importaciones Directas, Movilidad Eléctrica & Casas Modulares</title>
   <style>
     :root {
-      --primary: #76e600;
-      --primary-hover: #88ff00;
-      --primary-glow: rgba(118, 230, 0, 0.35);
+      --primary: #16C60C;
+      --primary-hover: #1ae60f;
+      --primary-glow: rgba(22, 198, 12, 0.35);
       --bg-main: #0b0f15;
       --bg-header: #080c10;
       --bg-card: #232b36;
@@ -58,14 +58,14 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 8px;
       text-decoration: none;
       user-select: none;
     }
 
     .brand-icon {
-      width: 56px;
-      height: 56px;
+      width: 64px;
+      height: 64px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -229,7 +229,7 @@
     }
     .btn-lime:hover {
       background-color: var(--primary-hover);
-      box-shadow: 0 0 24px rgba(118, 230, 0, 0.6);
+      box-shadow: 0 0 24px rgba(22, 198, 12, 0.6);
       transform: translateY(-2px);
     }
 
@@ -239,7 +239,7 @@
       border: 1.5px solid var(--primary);
     }
     .btn-outline:hover {
-      background-color: rgba(118, 230, 0, 0.1);
+      background-color: rgba(22, 198, 12, 0.1);
       color: #fff;
     }
 
@@ -316,7 +316,7 @@
 
     .tracking-form input:focus {
       border-color: var(--primary);
-      box-shadow: 0 0 10px rgba(118, 230, 0, 0.2);
+      box-shadow: 0 0 10px rgba(22, 198, 12, 0.2);
     }
 
     .tracking-form button {
@@ -333,7 +333,7 @@
 
     .tracking-form button:hover {
       background: var(--primary-hover);
-      box-shadow: 0 0 24px rgba(118, 230, 0, 0.6);
+      box-shadow: 0 0 24px rgba(22, 198, 12, 0.6);
     }
 
     .tracking-steps {
@@ -415,8 +415,8 @@
 
     .card:hover {
       transform: translateY(-5px);
-      border-color: rgba(118, 230, 0, 0.4);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(118, 230, 0, 0.15);
+      border-color: rgba(22, 198, 12, 0.4);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(22, 198, 12, 0.15);
     }
 
     .card img {
@@ -491,7 +491,7 @@
 
     .whatsapp-float:hover {
       transform: scale(1.04);
-      box-shadow: 0 8px 25px rgba(118, 230, 0, 0.6);
+      box-shadow: 0 8px 25px rgba(22, 198, 12, 0.6);
     }
 
     .whatsapp-float svg {
@@ -551,8 +551,8 @@
     }
 
     .custom-import:hover {
-      border-color: rgba(118, 230, 0, 0.4);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(118, 230, 0, 0.15);
+      border-color: rgba(22, 198, 12, 0.4);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(22, 198, 12, 0.15);
     }
 
     .custom-import h3 {
@@ -615,9 +615,8 @@
     </div>
   </header>
 
-  <!-- CARRUSEL HERO AUTOMÁTICO (Cada 5 segundos) -->
+  <!-- CARRUSEL HERO -->
   <section class="slider-container" id="inicio">
-    <!-- Diapositiva 1: Importación directa -->
     <div class="slide slide-1 active">
       <div class="slide-content">
         <span class="slide-tag">Importaciones Directas</span>
@@ -630,7 +629,6 @@
       </div>
     </div>
 
-    <!-- Diapositiva 2: Movilidad eléctrica -->
     <div class="slide slide-2">
       <div class="slide-content">
         <span class="slide-tag">Movilidad Eléctrica</span>
@@ -643,7 +641,6 @@
       </div>
     </div>
 
-    <!-- Diapositiva 3: Casas modulares -->
     <div class="slide slide-3">
       <div class="slide-content">
         <span class="slide-tag">Casas Modulares</span>
@@ -656,7 +653,6 @@
       </div>
     </div>
 
-    <!-- Indicadores -->
     <div class="slider-indicators">
       <span class="dot active" onclick="currentSlide(0)"></span>
       <span class="dot" onclick="currentSlide(1)"></span>
@@ -664,7 +660,7 @@
     </div>
   </section>
 
-  <!-- BARRA DE TRACKING (RASTREO) -->
+  <!-- TRACKING -->
   <section class="tracking-section" id="rastreo">
     <div class="container tracking-box">
       <h3>📦 Rastrea tu importación</h3>
@@ -679,7 +675,6 @@
   <!-- CATÁLOGO -->
   <section class="catalog" id="catalogo">
 
-    <!-- SECCIÓN 1: Vehículos Híbridos y Eléctricos -->
     <div class="container catalog-subsection" id="vehiculos">
       <div class="section-header">
         <h2>Nuevo Catálogo</h2>
@@ -689,7 +684,6 @@
       <p class="subsection-desc">Importación de vehículos híbridos y eléctricos de las mejores marcas del mundo.</p>
       <div class="grid">
 
-        <!-- Vehículo 1 -->
         <div class="card">
           <img src="https://drive.google.com/thumbnail?id=1fwbLnVESpISbMAyfK3NLPJGXEoD2E-Aw&sz=w600" alt="SUV Híbrida Enchufable">
           <div class="card-body">
@@ -702,7 +696,6 @@
           </div>
         </div>
 
-        <!-- Vehículo 2 -->
         <div class="card">
           <img src="https://drive.google.com/thumbnail?id=1hGRkpHnwLmx36ycked-tFmTnNlQM05YF&sz=w600" alt="Sedán Eléctrico">
           <div class="card-body">
@@ -718,13 +711,11 @@
       </div>
     </div>
 
-    <!-- SECCIÓN 2: Casas Modulares Inteligentes SmartHome -->
     <div class="container catalog-subsection" id="casas">
       <h3>Casas Modulares Inteligentes SmartHome</h3>
       <p class="subsection-desc">Importación de casas modulares con tecnología domótica, autoconsumo solar y diseño moderno.</p>
       <div class="grid">
 
-        <!-- Casa Modular 1 -->
         <div class="card">
           <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Casa Modular Smart 40">
           <div class="card-body">
@@ -737,7 +728,6 @@
           </div>
         </div>
 
-        <!-- Casa Modular 2 -->
         <div class="card">
           <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a707?auto=format&fit=crop&w=600&q=80" alt="Casa Modular Eco 75">
           <div class="card-body">
@@ -753,13 +743,11 @@
       </div>
     </div>
 
-    <!-- SECCIÓN 3: Cargadores y Estaciones Eléctricas -->
     <div class="container catalog-subsection" id="cargadores">
       <h3>Cargadores para Vehículos Eléctricos & Estaciones Eléctricas</h3>
       <p class="subsection-desc">Importación de cargadores y estaciones de carga para vehículos eléctricos.</p>
       <div class="grid">
 
-        <!-- Cargador 1 -->
         <div class="card">
           <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=600&q=80" alt="Cargador Wallbox">
           <div class="card-body">
@@ -772,7 +760,6 @@
           </div>
         </div>
 
-        <!-- Cargador 2 -->
         <div class="card">
           <img src="https://images.unsplash.com/photo-1610647752706-3bb12232b3a5?auto=format&fit=crop&w=600&q=80" alt="Estación de Carga Rápida">
           <div class="card-body">
@@ -799,7 +786,7 @@
     </div>
   </section>
 
-  <!-- FOOTER Y CONTACTO -->
+  <!-- FOOTER -->
   <footer id="contacto">
     <div class="container">
       <div class="footer-grid">
@@ -817,7 +804,7 @@
         </div>
         <div class="footer-col">
           <h4>Contacto</h4>
-          <p>Ejecutivo Comercial<p>
+          <p>Jonathan Zamora</p>
           <p>WhatsApp: +506 72429342</p>
           <p>Email: info@electroriginc.com</p>
           <p>Alajuela, Costa Rica</p>
@@ -836,7 +823,7 @@
     <span class="wa-label">Contactar a un asesor</span>
   </a>
 
-  <!-- SCRIPT DEL CARRUSEL -->
+  <!-- SCRIPT -->
   <script>
     let slideIndex = 0;
     const slides = document.querySelectorAll('.slide');
@@ -874,7 +861,6 @@
       slideInterval = setInterval(nextSlide, 5000);
     }
 
-    // Swipe con los dedos
     function handleSwipe() {
       const diff = touchStartX - touchEndX;
       if (Math.abs(diff) > 50) {
@@ -899,7 +885,6 @@
 
     startSlider();
 
-    // Animación de tarjetas al hacer scroll
     const cards = document.querySelectorAll('.card');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
