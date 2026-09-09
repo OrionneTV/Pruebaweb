@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ElectrOriginc | Importaciones Directas, Movilidad Eléctrica & Casas Modulares</title>
-  <meta name="description" content="ElectrOriginc - Importación directa de vehículos híbridos y eléctricos, casas modulares inteligentes SmartHome y cargadores para vehículos eléctricos. Calidad global a tu alcance. Alajuela, Costa Rica.">
-  <meta name="keywords" content="importación, vehículos eléctricos, vehículos híbridos, casas modulares, SmartHome, cargadores eléctricos, Costa Rica, Alajuela">
+  <meta name="description" content="ElectrOriginc - Importación directa de vehículos híbridos y eléctricos, casas modulares inteligentes SmartHome y cargadores para vehículos eléctricos. Calidad global a tu alcance.">
+  <meta name="keywords" content="importación, vehículos eléctricos, vehículos híbridos, casas modulares, SmartHome, cargadores eléctricos, Costa Rica">
   <meta name="author" content="ElectrOriginc">
   <meta property="og:title" content="ElectrOriginc | Importaciones Directas, Movilidad Eléctrica & Casas Modulares">
   <meta property="og:description" content="Importación directa de vehículos híbridos, eléctricos, casas modulares inteligentes y cargadores. Calidad global a tu alcance.">
@@ -28,862 +28,123 @@
       --text-body: #9ca3af;
       --text-dim: #64748b;
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    }
-
-    body {
-      background-color: var(--bg-main);
-      color: var(--text-main);
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* LOADER */
-    .loader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--bg-main);
-      z-index: 99999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: opacity 0.5s, visibility 0.5s;
-    }
-
-    .loader.hide {
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    .loader-spinner {
-      width: 50px;
-      height: 50px;
-      border: 4px solid var(--border-card);
-      border-top-color: var(--primary);
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    /* HEADER */
-    header {
-      background-color: var(--bg-header);
-      border-bottom: 1px solid #18202c;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .nav-wrapper {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 0;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      text-decoration: none;
-      user-select: none;
-    }
-
-    .brand-icon {
-      width: 120px;
-      height: 120px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .brand-icon img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .brand-title {
-      color: #ffffff;
-      font-size: 1.55rem;
-      font-weight: 700;
-      letter-spacing: -0.3px;
-      line-height: 1.1;
-    }
-
-    .brand-subtitle {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      margin-top: 3px;
-    }
-
-    .brand-subtitle .sub-text {
-      font-size: 0.48rem;
-      font-weight: 600;
-      letter-spacing: 1.4px;
-      color: #7e8b9b;
-      white-space: nowrap;
-    }
-
-    .brand-subtitle .sub-line {
-      flex: 1;
-      height: 1px;
-      background: #3b4654;
-      min-width: 14px;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-    }
-
-    nav a {
-      color: var(--text-muted);
-      text-decoration: none;
-      margin-left: 24px;
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: color 0.2s;
-    }
-
-    nav a:hover, nav a.active {
-      color: var(--primary);
-    }
-
-    /* SLIDER / CARRUSEL HERO */
-    .slider-container {
-      position: relative;
-      height: 520px;
-      overflow: hidden;
-      background: #000;
-    }
-
-    .slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-    }
-
-    .slide.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .slide-1 {
-      background-image: linear-gradient(to right, rgba(11, 15, 21, 0.92) 35%, rgba(11, 15, 21, 0.45)),
-        url('https://drive.google.com/thumbnail?id=1sCb_u20H3GcYuVg8wuCvzsM3LTHVp2sj&sz=w1600');
-    }
-
-    .slide-2 {
-      background-image: linear-gradient(to right, rgba(11, 15, 21, 0.92) 35%, rgba(11, 15, 21, 0.45)),
-        url('https://drive.google.com/thumbnail?id=1wEfIZVBh_oi5r85ALies8l4LBf5wHeQh&sz=w1600');
-    }
-
-    .slide-3 {
-      background-image: linear-gradient(to right, rgba(11, 15, 21, 0.92) 35%, rgba(11, 15, 21, 0.45)),
-        url('https://drive.google.com/thumbnail?id=1OKQkgD6bCqT3Ebzs97j1RRysHvcVczkz&sz=w1600');
-    }
-
-    .slide-content {
-      color: #fff;
-      max-width: 650px;
-      padding-left: 60px;
-    }
-
-    .slide-tag {
-      display: inline-block;
-      text-transform: uppercase;
-      font-size: 0.82rem;
-      letter-spacing: 1.5px;
-      color: var(--primary);
-      font-weight: 700;
-      margin-bottom: 14px;
-    }
-
-    .slide-content h1 {
-      font-size: 2.7rem;
-      line-height: 1.22;
-      margin-bottom: 18px;
-      font-weight: 800;
-    }
-
-    .slide-content p {
-      font-size: 1.08rem;
-      color: #cbd5e1;
-      margin-bottom: 30px;
-      line-height: 1.5;
-    }
-
-    .hero-btn-group {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 26px;
-      border-radius: 8px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.25s ease;
-      font-size: 0.95rem;
-      border: none;
-      cursor: pointer;
-    }
-
-    .btn-lime {
-      background-color: var(--primary);
-      color: #070a05;
-      box-shadow: 0 0 16px var(--primary-glow);
-    }
-    .btn-lime:hover {
-      background-color: var(--primary-hover);
-      box-shadow: 0 0 24px rgba(22, 198, 12, 0.6);
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      background-color: transparent;
-      color: var(--primary);
-      border: 1.5px solid var(--primary);
-    }
-    .btn-outline:hover {
-      background-color: rgba(22, 198, 12, 0.1);
-      color: #fff;
-    }
-
-    /* Zonas clicables laterales del carrusel (escritorio) */
-    .slider-click-zone {
-      position: absolute;
-      top: 0;
-      width: 18%;
-      height: 100%;
-      z-index: 10;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: var(--bg-main); color: var(--text-main); line-height: 1.6; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-main); z-index: 99999; display: flex; align-items: center; justify-content: center; transition: opacity 0.5s, visibility 0.5s; }
+    .loader.hide { opacity: 0; visibility: hidden; }
+    .loader-spinner { width: 50px; height: 50px; border: 4px solid var(--border-card); border-top-color: var(--primary); border-radius: 50%; animation: spin 0.8s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    header { background-color: var(--bg-header); border-bottom: 1px solid #18202c; position: sticky; top: 0; z-index: 1000; }
+    .nav-wrapper { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; }
+    .brand { display: flex; align-items: center; gap: 8px; text-decoration: none; user-select: none; }
+    .brand-icon { width: 140px; height: 140px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .brand-icon img { width: 100%; height: 100%; object-fit: contain; }
+    .brand-text { display: flex; flex-direction: column; justify-content: center; text-align: center; }
+    .brand-title { color: #ffffff; font-size: 1.55rem; font-weight: 700; letter-spacing: -0.3px; line-height: 1.1; }
+    .brand-subtitle { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 3px; }
+    .brand-subtitle .sub-text { font-size: 0.48rem; font-weight: 600; letter-spacing: 1.4px; color: #7e8b9b; white-space: nowrap; }
+    .brand-subtitle .sub-line { flex: 1; height: 1px; background: #3b4654; min-width: 14px; }
+    nav { display: flex; align-items: center; }
+    nav a { color: var(--text-muted); text-decoration: none; margin-left: 24px; font-weight: 500; font-size: 0.95rem; transition: color 0.2s; }
+    nav a:hover, nav a.active { color: var(--primary); }
+    .slider-container { position: relative; height: 520px; overflow: hidden; background: #000; }
+    .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; visibility: hidden; transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out; background-size: cover; background-position: center; display: flex; align-items: center; }
+    .slide.active { opacity: 1; visibility: visible; }
+    .slide-1 { background-image: linear-gradient(to right, rgba(11, 15, 21, 0.92) 35%, rgba(11, 15, 21, 0.45)), url('https://drive.google.com/thumbnail?id=1sCb_u20H3GcYuVg8wuCvzsM3LTHVp2sj&sz=w1600'); }
+    .slide-2 { background-image: linear-gradient(to right, rgba(11, 15, 21, 0.92) 35%, rgba(11, 15, 21, 0.45)), url('https://drive.google.com/thumbnail?id=1wEfIZVBh_oi
+    .slide-3 { background-image: linear-gradient(to right, rgba(11, 15, 21, 0.92) 35%, rgba(11, 15, 21, 0.45)), url('https://drive.google.com/thumbnail?id=1OKQkgD6bCqT3Ebzs97j1RRysHvcVczkz&sz=w1600'); }
+    .slide-content { color: #fff; max-width: 650px; padding-left: 60px; }
+    .slide-tag { display: inline-block; text-transform: uppercase; font-size: 0.82rem; letter-spacing: 1.5px; color: var(--primary); font-weight: 700; margin-bottom: 14px; }
+    .slide-content h1 { font-size: 2.7rem; line-height: 1.22; margin-bottom: 18px; font-weight: 800; }
+    .slide-content p { font-size: 1.08rem; color: #cbd5e1; margin-bottom: 30px; line-height: 1.5; }
+    .hero-btn-group { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn { display: inline-block; padding: 12px 26px; border-radius: 8px; font-weight: 700; text-decoration: none; transition: all 0.25s ease; font-size: 0.95rem; border: none; cursor: pointer; }
+    .btn-lime { background-color: var(--primary); color: #070a05; box-shadow: 0 0 16px var(--primary-glow); }
+    .btn-lime:hover { background-color: var(--primary-hover); box-shadow: 0 0 24px rgba(22, 198, 12, 0.6); transform: translateY(-2px); }
+    .btn-outline { background-color: transparent; color: var(--primary); border: 1.5px solid var(--primary); }
+    .btn-outline:hover { background-color: rgba(22, 198, 12, 0.1); color: #fff; }
+    .slider-click-zone { position: absolute; top: 0; width: 18%; height: 100%; z-index: 10; cursor: pointer; -webkit-tap-highlight-color: transparent; outline: none; }
     .slider-click-zone.left { left: 0; }
     .slider-click-zone.right { right: 0; }
-
-    .slider-click-zone:hover {
-      background: rgba(22, 198, 12, 0.08);
-    }
-
-    /* Indicadores del Slider */
-    .slider-indicators {
-      position: absolute;
-      bottom: 25px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      z-index: 10;
-    }
-
-    .dot {
-      width: 8px;
-      height: 8px;
-      background: rgba(255, 255, 255, 0.3);
-      border-radius: 50%;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-
-    .dot.active {
-      background: var(--primary);
-      width: 22px;
-      border-radius: 4px;
-    }
-
-    /* BARRA DE TRACKING */
-    .tracking-section {
-      background-color: var(--bg-card);
-      padding: 35px 0;
-      border-bottom: 1px solid var(--border-card);
-    }
-
-    .tracking-box {
-      text-align: center;
-    }
-
-    .tracking-box h3 {
-      color: #ffffff;
-      font-size: 1.35rem;
-      font-weight: 700;
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-
-    .tracking-form {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      max-width: 620px;
-      margin: 0 auto 14px;
-    }
-
-    .tracking-form input {
-      flex: 1;
-      padding: 13px 18px;
-      border-radius: 8px;
-      background-color: var(--input-bg);
-      border: 1px solid var(--input-border);
-      color: #fff;
-      outline: none;
-      font-size: 0.95rem;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-
-    .tracking-form input::placeholder {
-      color: #64748b;
-    }
-
-    .tracking-form input:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 10px rgba(22, 198, 12, 0.2);
-    }
-
-    .tracking-form button {
-      background: var(--primary);
-      color: #070a05;
-      border: none;
-      padding: 13px 25px;
-      border-radius: 8px;
-      font-weight: 700;
-      cursor: pointer;
-      box-shadow: 0 0 16px var(--primary-glow);
-      transition: all 0.25s ease;
-    }
-
-    .tracking-form button:hover {
-      background: var(--primary-hover);
-      box-shadow: 0 0 24px rgba(22, 198, 12, 0.6);
-    }
-
-    .tracking-steps {
-      color: var(--text-body);
-      font-size: 0.85rem;
-    }
-
-    /* SECCIÓN EMPRESAS / PERSONAS */
-    .audience-section {
-      padding: 50px 0;
-      background-color: var(--bg-main);
-    }
-
-    .audience-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 28px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .audience-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-card);
-      border-radius: 14px;
-      padding: 35px 30px;
-      text-align: center;
-      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .audience-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(22, 198, 12, 0.4);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(22, 198, 12, 0.15);
-    }
-
-    .audience-icon {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-    }
-
-    .audience-card h3 {
-      color: #ffffff;
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .audience-card p {
-      color: var(--text-body);
-      font-size: 0.95rem;
-      line-height: 1.55;
-      margin-bottom: 22px;
-    }
-
-    .audience-card .btn {
-      display: inline-block;
-      padding: 12px 24px;
-      font-size: 0.9rem;
-    }
-
-    /* SECCIÓN CONFIANZA */
-    .trust-section {
-      padding: 60px 0;
-      background-color: var(--bg-header);
-      border-top: 1px solid #18202d;
-      border-bottom: 1px solid #18202d;
-    }
-
-    .trust-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .trust-item {
-      text-align: center;
-      padding: 20px 15px;
-    }
-
-    .trust-item .trust-icon {
-      font-size: 2rem;
-      margin-bottom: 12px;
-    }
-
-    .trust-item h4 {
-      color: #fff;
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-
-    .trust-item p {
-      color: var(--text-body);
-      font-size: 0.85rem;
-      line-height: 1.5;
-    }
-
-    /* CATÁLOGO */
-    .catalog {
-      padding: 80px 0;
-      background-color: var(--bg-main);
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-
-    .section-header h2 {
-      font-size: 2.4rem;
-      font-weight: 800;
-      color: #ffffff;
-      letter-spacing: -0.5px;
-      margin-bottom: 6px;
-    }
-
-    .section-header p {
-      color: var(--text-body);
-      font-size: 1.05rem;
-    }
-
-    .catalog-subsection {
-      margin-bottom: 70px;
-    }
-
-    .catalog-subsection h3 {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 6px;
-      padding-bottom: 10px;
-      border-bottom: 3px solid var(--primary);
-      display: inline-block;
-    }
-
-    .catalog-subsection .subsection-desc {
-      color: var(--text-body);
-      font-size: 0.98rem;
-      margin-bottom: 28px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 28px;
-    }
-
-    .card {
-      background: var(--bg-card);
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid var(--border-card);
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.5s ease, box-shadow 0.5s ease;
-      opacity: 0;
-      transform: translateY(50px) scale(0.98);
-    }
-
-    .card.visible {
-      animation: fadeInCard 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-    }
-
-    @keyframes fadeInCard {
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(22, 198, 12, 0.4);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(22, 198, 12, 0.15);
-    }
-
-    .card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      display: block;
-      border-bottom: 1px solid #1d2532;
-    }
-
-    .card-body {
-      padding: 24px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .badge-category {
-      font-size: 0.72rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      color: var(--primary);
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-      display: inline-block;
-    }
-
-    .card-body h3 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: #ffffff;
-    }
-
-    .card-body p {
-      font-size: 0.92rem;
-      color: var(--text-body);
-      line-height: 1.55;
-      margin-bottom: 24px;
-    }
-
-    .card-actions {
-      margin-top: auto;
-    }
-
-    .card-actions .btn {
-      width: 100%;
-      text-align: center;
-      padding: 12px;
-      font-size: 0.95rem;
-    }
-
-    /* SECCIÓN CONTADORES */
-    .counters-section {
-      padding: 50px 0;
-      background-color: var(--bg-header);
-      border-top: 1px solid #18202d;
-      border-bottom: 1px solid #18202d;
-    }
-
-    .counters-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 30px;
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .counter-item .counter-number {
-      font-size: 2.8rem;
-      font-weight: 800;
-      color: var(--primary);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-
-    .counter-item .counter-label {
-      color: var(--text-body);
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    /* SECCIÓN IMPORTACIÓN PERSONALIZADA */
-    .custom-import {
-      background: var(--bg-card);
-      border: 1px solid var(--border-card);
-      border-radius: 14px;
-      padding: 40px;
-      text-align: center;
-      margin: 0 auto 60px;
-      max-width: 700px;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .custom-import:hover {
-      border-color: rgba(22, 198, 12, 0.4);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(22, 198, 12, 0.15);
-    }
-
-    .custom-import h3 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 12px;
-    }
-
-    .custom-import p {
-      font-size: 0.98rem;
-      color: var(--text-body);
-      margin-bottom: 24px;
-      line-height: 1.55;
-    }
-
-    .custom-import .btn {
-      display: inline-block;
-      padding: 14px 32px;
-      font-size: 1rem;
-    }
-
-    /* BURBUJA FLOTANTE DE WHATSAPP */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--primary);
-      color: #070a05;
-      padding: 13px 22px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.95rem;
-      box-shadow: 0 6px 20px var(--primary-glow);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .whatsapp-float:hover {
-      transform: scale(1.04);
-      box-shadow: 0 8px 25px rgba(22, 198, 12, 0.6);
-    }
-
-    .whatsapp-float svg {
-      width: 24px;
-      height: 24px;
-      fill: #070a05;
-      flex-shrink: 0;
-    }
-
-    .whatsapp-float .wa-label {
-      white-space: nowrap;
-    }
-
-    /* BOTÓN VOLVER ARRIBA */
-    .scroll-top {
-      position: fixed;
-      bottom: 25px;
-      left: 25px;
-      z-index: 9998;
-      width: 44px;
-      height: 44px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-card);
-      color: var(--primary);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      font-size: 1.3rem;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
-    }
-
-    .scroll-top.show {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .scroll-top:hover {
-      transform: scale(1.1);
-      border-color: var(--primary);
-    }
-
-    /* FOOTER */
-    footer {
-      background-color: var(--bg-header);
-      color: var(--text-body);
-      padding: 60px 0 30px;
-      border-top: 1px solid #18202d;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 40px;
-      margin-bottom: 40px;
-    }
-
-    .footer-col h4 {
-      color: #fff;
-      font-size: 1.1rem;
-      margin-bottom: 16px;
-      font-weight: 700;
-    }
-
-    .footer-col p {
-      margin-bottom: 9px;
-      font-size: 0.92rem;
-    }
-
-    .footer-social {
-      display: flex;
-      gap: 12px;
-      margin-top: 12px;
-    }
-
-    .footer-social a {
-      width: 38px;
-      height: 38px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-card);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      font-size: 1.1rem;
-      transition: transform 0.2s, border-color 0.2s;
-    }
-
-    .footer-social a:hover {
-      transform: scale(1.1);
-      border-color: var(--primary);
-    }
-
-    .footer-bottom {
-      border-top: 1px solid #18202d;
-      padding-top: 25px;
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--text-dim);
-    }
-
-    @media (max-width: 1024px) {
-      .brand-icon { width: 90px; height: 90px; }
-      .brand-title { font-size: 1.35rem; }
-      nav a { margin-left: 16px; font-size: 0.88rem; }
-    }
-
-    @media (max-width: 768px) {
-      .slide-content { padding-left: 20px; padding-right: 20px; }
-      .slide-content h1 { font-size: 2rem; }
-      .slide-content p { font-size: 0.98rem; }
-      .slider-container { height: 480px; }
-      .tracking-form { flex-direction: column; padding: 0 10px; }
-      .tracking-form input { width: 100%; }
-      .tracking-form button { width: 100%; }
-      .nav-wrapper { flex-direction: column; gap: 12px; padding: 12px 0; }
-      .brand { justify-content: center; }
-      .brand-icon { width: 80px; height: 80px; }
-      .brand-title { font-size: 1.3rem; }
-      .brand-subtitle .sub-text { font-size: 0.44rem; }
-      nav { flex-wrap: wrap; justify-content: center; gap: 4px 12px; }
-      nav a { margin: 0; font-size: 0.82rem; }
-      .whatsapp-float .wa-label { display: none; }
-      .whatsapp-float { padding: 14px; }
-      .slider-click-zone { width: 10%; }
-      .grid { grid-template-columns: 1fr; }
-      .audience-grid { grid-template-columns: 1fr; }
-      .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-      .counters-grid { grid-template-columns: repeat(2, 1fr); gap: 25px; }
-      .counter-item .counter-number { font-size: 2.2rem; }
-      .custom-import { padding: 30px 20px; }
-      .custom-import h3 { font-size: 1.3rem; }
-      .footer-grid { grid-template-columns: 1fr; gap: 30px; }
-      .section-header h2 { font-size: 1.9rem; }
-      .catalog-subsection h3 { font-size: 1.35rem; }
-      .catalog { padding: 50px 0; }
-      .audience-section { padding: 35px 0; }
-      .trust-section { padding: 40px 0; }
-      .counters-section { padding: 35px 0; }
-    }
-
-    @media (max-width: 480px) {
-      .brand-icon { width: 65px; height: 65px; }
-      .brand-title { font-size: 1.15rem; }
-      .brand-subtitle .sub-text { font-size: 0.38rem; letter-spacing: 1px; }
-      .slide-content h1 { font-size: 1.7rem; }
-      .slider-container { height: 450px; }
-      .hero-btn-group { flex-direction: column; }
-      .hero-btn-group .btn { width: 100%; text-align: center; }
-      .trust-grid { grid-template-columns: 1fr; }
-      .counters-grid { grid-template-columns: 1fr; }
-      .footer-social { justify-content: center; }
-      .footer-bottom { font-size: 0.75rem; }
-    }
+    .slider-click-zone:hover { background: rgba(22, 198, 12, 0.08); }
+    .slider-click-zone:active { background: rgba(22, 198, 12, 0.15); }
+    .slider-indicators { position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 8px; z-index: 10; }
+    .dot { width: 8px; height: 8px; background: rgba(255, 255, 255, 0.3); border-radius: 50%; cursor: pointer; transition: all 0.3s; }
+    .dot.active { background: var(--primary); width: 22px; border-radius: 4px; }
+    .tracking-section { background-color: var(--bg-card); padding: 35px 0; border-bottom: 1px solid var(--border-card); }
+    .tracking-box { text-align: center; }
+    .tracking-box h3 { color: #ffffff; font-size: 1.35rem; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+    .tracking-form { display: flex; justify-content: center; gap: 12px; max-width: 620px; margin: 0 auto 14px; }
+    .tracking-form input { flex: 1; padding: 13px 18px; border-radius: 8px; background-color: var(--input-bg); border: 1px solid var(--input-border); color: #fff; outline: none; font-size: 0.95rem; transition: border-color 0.2s, box-shadow 0.2s; }
+    .tracking-form input::placeholder { color: #64748b; }
+    .tracking-form input:focus { border-color: var(--primary); box-shadow: 0 0 10px rgba(22, 198, 12, 0.2); }
+    .tracking-form button { background: var(--primary); color: #070a05; border: none; padding: 13px 25px; border-radius: 8px; font-weight: 700; cursor: pointer; box-shadow: 0 0 16px var(--primary-glow); transition: all 0.25s ease; }
+    .tracking-form button:hover { background: var(--primary-hover); box-shadow: 0 0 24px rgba(22, 198, 12, 0.6); }
+    .tracking-steps { color: var(--text-body); font-size: 0.85rem; }
+    .audience-section { padding: 50px 0; background-color: var(--bg-main); }
+    .audience-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; max-width: 800px; margin: 0 auto; }
+    .audience-card { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: 14px; padding: 35px 30px; text-align: center; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
+    .audience-card:hover { transform: translateY(-5px); border-color: rgba(22, 198, 12, 0.4); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(22, 198, 12, 0.15); }
+    .audience-card img { width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 18px; }
+    .audience-card h3 { color: #ffffff; font-size: 1.4rem; font-weight: 700; margin-bottom: 10px; }
+    .audience-card p { color: var(--text-body); font-size: 0.95rem; line-height: 1.55; margin-bottom: 22px; }
+    .audience-card .btn { display: inline-block; padding: 12px 24px; font-size: 0.9rem; }
+    .trust-section { padding: 60px 0; background-color: var(--bg-header); border-top: 1px solid #18202d; border-bottom: 1px solid #18202d; }
+    .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto; }
+    .trust-item { text-align: center; padding: 20px 15px; }
+    .trust-item h4 { color: #fff; font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+    .trust-item p { color: var(--text-body); font-size: 0.85rem; line-height: 1.5; }
+    .catalog { padding: 80px 0; background-color: var(--bg-main); }
+    .section-header { text-align: center; margin-bottom: 50px; }
+    .section-header h2 { font-size: 2.4rem; font-weight: 800; color: #ffffff; letter-spacing: -0.5px; margin-bottom: 6px; }
+    .section-header p { color: var(--text-body); font-size: 1.05rem; }
+    .catalog-subsection { margin-bottom: 70px; }
+    .catalog-subsection h3 { font-size: 1.6rem; font-weight: 700; color: #ffffff; margin-bottom: 6px; padding-bottom: 10px; border-bottom: 3px solid var(--primary); display: inline-block; }
+    .catalog-subsection .subsection-desc { color: var(--text-body); font-size: 0.98rem; margin-bottom: 28px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
+    .card { background: var(--bg-card); border-radius: 14px; overflow: hidden; border: 1px solid var(--border-card); display: flex; flex-direction: column; transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.5s ease, box-shadow 0.5s ease; opacity: 0; transform: translateY(50px) scale(0.98); }
+    .card.visible { animation: fadeInCard 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+    @keyframes fadeInCard { to { opacity: 1; transform: translateY(0) scale(1); } }
+    .card:hover { transform: translateY(-5px); border-color: rgba(22, 198, 12, 0.4); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(22, 198, 12, 0.15); }
+    .card img { width: 100%; height: 220px; object-fit: cover; display: block; border-bottom: 1px solid #1d2532; }
+    .card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .badge-category { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: var(--primary); letter-spacing: 1px; margin-bottom: 8px; display: inline-block; }
+    .card-body h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; color: #ffffff; }
+    .card-body p { font-size: 0.92rem; color: var(--text-body); line-height: 1.55; margin-bottom: 24px; }
+    .card-actions { margin-top: auto; }
+    .card-actions .btn { width: 100%; text-align: center; padding: 12px; font-size: 0.95rem; }
+    .counters-section { padding: 50px 0; background-color: var(--bg-header); border-top: 1px solid #18202d; border-bottom: 1px solid #18202d; }
+    .counters-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 30px; max-width: 900px; margin: 0 auto; text-align: center; }
+    .counter-item .counter-number { font-size: 2.8rem; font-weight: 800; color: var(--primary); line-height: 1; margin-bottom: 8px; }
+    .counter-item .counter-label { color: var(--text-body); font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+    .custom-import { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: 14px; padding: 40px; text-align: center; margin: 0 auto 60px; max-width: 700px; transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+    .custom-import:hover { border-color: rgba(22, 198, 12, 0.4); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(22, 198, 12, 0.15); }
+    .custom-import h3 { font-size: 1.5rem; font-weight: 700; color: #ffffff; margin-bottom: 12px; }
+    .custom-import p { font-size: 0.98rem; color: var(--text-body); margin-bottom: 24px; line-height: 1.55; }
+    .custom-import .btn { display: inline-block; padding: 14px 32px; font-size: 1rem; }
+    .whatsapp-float { position: fixed; bottom: 25px; right: 25px; z-index: 9999; display: flex; align-items: center; gap: 10px; background: var(--primary); color: #070a05; padding: 13px 22px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.95rem; box-shadow: 0 6px 20px var(--primary-glow); transition: transform 0.2s, box-shadow 0.2s; }
+    .whatsapp-float:hover { transform: scale(1.04); box-shadow: 0 8px 25px rgba(22, 198, 12, 0.6); }
+    .whatsapp-float svg { width: 24px; height: 24px; fill: #070a05; flex-shrink: 0; }
+    .whatsapp-float .wa-label { white-space: nowrap; }
+    .scroll-top { position: fixed; bottom: 25px; left: 25px; z-index: 9998; width: 44px; height: 44px; background: var(--bg-card); border: 1px solid var(--border-card); color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.3rem; opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s, transform 0.2s; }
+    .scroll-top.show { opacity: 1; visibility: visible; }
+    .scroll-top:hover { transform: scale(1.1); border-color: var(--primary); }
+    footer { background-color: var(--bg-header); color: var(--text-body); padding: 60px 0 30px; border-top: 1px solid #18202d; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 40px; margin-bottom: 40px; }
+    .footer-col h4 { color: #fff; font-size: 1.1rem; margin-bottom: 16px; font-weight: 700; }
+    .footer-col p { margin-bottom: 9px; font-size: 0.92rem; }
+    .footer-social { display: flex; gap: 12px; margin-top: 12px; }
+    .footer-social a { width: 38px; height: 38px; background: var(--bg-card); border: 1px solid var(--border-card); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.2s, border-color 0.2s; }
+    .footer-social a:hover { transform: scale(1.1); border-color: var(--primary); }
+    .footer-bottom { border-top: 1px solid #18202d; padding-top: 25px; text-align: center; font-size: 0.85rem; color: var(--text-dim); }
+    @media (max-width: 1024px) { .brand-icon { width: 100px; height: 100px; } .brand-title { font-size: 1.35rem; } nav a { margin-left: 16px; font-size: 0.88rem; } }
+    @media (max-width: 768px) { .slide-content { padding-left: 20px; padding-right: 20px; } .slide-content h1 { font-size: 2rem; } .slide-content p { font-size: 0.98rem; } .slider-container { height: 480px; } .tracking-form { flex-direction: column; padding: 0 10px; } .tracking-form input { width: 100%; } .tracking-form button { width: 100%; } .nav-wrapper { flex-direction: column; gap: 12px; padding: 12px 0; } .brand { justify-content: center; } .brand-icon { width: 95px; height: 95px; } .brand-title { font-size: 1.3rem; } .brand-subtitle .sub-text { font-size: 0.44rem; } nav { flex-wrap: wrap; justify-content: center; gap: 4px 12px; } nav a { margin: 0; font-size: 0.82rem; } .whatsapp-float .wa-label { display: none; } .whatsapp-float { padding: 14px; } .slider-click-zone { width: 10%; } .grid { grid-template-columns: 1fr; } .audience-grid { grid-template-columns: 1fr; } .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; } .counters-grid { grid-template-columns: repeat(2, 1fr); gap: 25px; } .counter-item .counter-number { font-size: 2.2rem; } .custom-import { padding: 30px 20px; } .custom-import h3 { font-size: 1.3rem; } .footer-grid { grid-template-columns: 1fr; gap: 30px; } .section-header h2 { font-size: 1.9rem; } .catalog-subsection h3 { font-size: 1.35rem; } .catalog { padding: 50px 0; } .audience-section { padding: 35px 0; } .trust-section { padding: 40px 0; } .counters-section { padding: 35px 0; } }
+    @media (max-width: 480px) { .brand-icon { width: 80px; height: 80px; } .brand-title { font-size: 1.15rem; } .brand-subtitle .sub-text { font-size: 0.38rem; letter-spacing: 1px; } .slide-content h1 { font-size: 1.7rem; } .slider-container { height: 450px; } .hero-btn-group { flex-direction: column; } .hero-btn-group .btn { width: 100%; text-align: center; } .trust-grid { grid-template-columns: 1fr; } .counters-grid { grid-template-columns: 1fr; } .footer-social { justify-content: center; } .footer-bottom { font-size: 0.75rem; } }
   </style>
 </head>
 <body>
-<!-- LOADER -->
+  <!-- LOADER -->
   <div class="loader" id="loader">
     <div class="loader-spinner"></div>
   </div>
@@ -981,16 +242,16 @@
     <div class="container">
       <div class="audience-grid">
         <div class="audience-card">
-          <div class="audience-icon">🏢</div>
+          <img src="https://drive.google.com/thumbnail?id=19KqBvio75_uP1OFpS1jKeoMMwVHMxhfE&sz=w600" alt="Empresas">
           <h3>Empresas</h3>
           <p>Importación y venta por volumen. Soluciones logísticas y comerciales para empresas con pedidos al por mayor.</p>
-          <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20asesoría%20sobre%20importación%20por%20volumen%20para%20empresas" target="_blank" class="btn btn-lime">Cotizar por volumen</a>
+          <a href="https://wa.me/50672429342?text=Hola,%20deseo%20asesoría%20sobre%20importación%20por%20volumen%20para%20empresas" target="_blank" class="btn btn-lime">Cotizar por volumen</a>
         </div>
         <div class="audience-card">
-          <div class="audience-icon">👤</div>
+          <img src="https://drive.google.com/thumbnail?id=1DSvM6TAZNrVIQKi26z1sKW7pQWbuko8P&sz=w600" alt="Personas">
           <h3>Personas</h3>
           <p>Importación y venta al detalle. Traemos lo que necesitas directamente para ti, con trámites incluidos.</p>
-          <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20asesoría%20sobre%20importación%20al%20detalle" target="_blank" class="btn btn-lime">Cotizar al detalle</a>
+          <a href="https://wa.me/50672429342?text=Hola,%20deseo%20asesoría%20sobre%20importación%20al%20detalle" target="_blank" class="btn btn-lime">Cotizar al detalle</a>
         </div>
       </div>
     </div>
@@ -1013,7 +274,7 @@
             <h3>SUV Híbrida Premium</h3>
             <p>Autonomía eléctrica 60 km · 4x4 · 7 plazas. Importación con garantía oficial y trámites incluidos.</p>
             <div class="card-actions">
-              <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20cotizar%20la%20SUV%20Híbrida%20Premium" target="_blank" class="btn btn-lime">Cotizar</a>
+              <a href="https://wa.me/50672429342?text=Hola,%20deseo%20cotizar%20la%20SUV%20Híbrida%20Premium" target="_blank" class="btn btn-lime">Cotizar</a>
             </div>
           </div>
         </div>
@@ -1024,7 +285,7 @@
             <h3>Sedán Eléctrico Premium</h3>
             <p>Autonomía 500+ km · Carga rápida 250 kW · 5 plazas. Cero emisiones, máxima eficiencia.</p>
             <div class="card-actions">
-              <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20cotizar%20el%20Sedán%20Eléctrico%20Premium" target="_blank" class="btn btn-lime">Cotizar</a>
+              <a href="https://wa.me/50672429342?text=Hola,%20deseo%20cotizar%20el%20Sedán%20Eléctrico%20Premium" target="_blank" class="btn btn-lime">Cotizar</a>
             </div>
           </div>
         </div>
@@ -1042,7 +303,7 @@
             <h3>ModulHome Smart 40</h3>
             <p>40 m² · Panel solar · Domótica integrada · Diseño minimalista. Importación llave en mano.</p>
             <div class="card-actions">
-              <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20cotizar%20la%20Casa%20Modular%20Smart%2040" target="_blank" class="btn btn-lime">Cotizar</a>
+              <a href="https://wa.me/50672429342?text=Hola,%20deseo%20cotizar%20la%20Casa%20Modular%20Smart%2040" target="_blank" class="btn btn-lime">Cotizar</a>
             </div>
           </div>
         </div>
@@ -1053,7 +314,7 @@
             <h3>ModulHome Eco 75</h3>
             <p>75 m² · Autoconsumo solar · Sistema eco-friendly · Domótica completa. Diseño sostenible.</p>
             <div class="card-actions">
-              <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20cotizar%20la%20Casa%20Modular%20Eco%2075" target="_blank" class="btn btn-lime">Cotizar</a>
+              <a href="https://wa.me/50672429342?text=Hola,%20deseo%20cotizar%20la%20Casa%20Modular%20Eco%2075" target="_blank" class="btn btn-lime">Cotizar</a>
             </div>
           </div>
         </div>
@@ -1071,7 +332,7 @@
             <h3>PowerCharge Wallbox Pro</h3>
             <p>Cargador de pared 7.4 kW · Conexión WiFi · App móvil · Compatible con todos los VE. Importación con garantía.</p>
             <div class="card-actions">
-              <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20cotizar%20el%20Cargador%20Wallbox%20Pro" target="_blank" class="btn btn-lime">Cotizar</a>
+              <a href="https://wa.me/50672429342?text=Hola,%20deseo%20cotizar%20el%20Cargador%20Wallbox%20Pro" target="_blank" class="btn btn-lime">Cotizar</a>
             </div>
           </div>
         </div>
@@ -1082,20 +343,19 @@
             <h3>FastCharge Station 50kW</h3>
             <p>Estación de carga rápida DC 50 kW · Carga en 30 min · Ideal para empresas y parkings públicos.</p>
             <div class="card-actions">
-              <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20cotizar%20la%20Estación%20FastCharge%2050kW" target="_blank" class="btn btn-lime">Cotizar</a>
+              <a href="https://wa.me/50672429342?text=Hola,%20deseo%20cotizar%20la%20Estación%20FastCharge%2050kW" target="_blank" class="btn btn-lime">Cotizar</a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- IMPORTACIÓN PERSONALIZADA -->
+<!-- IMPORTACIÓN PERSONALIZADA -->
   <section class="container" style="padding-bottom: 80px;">
     <div class="custom-import">
       <h3>¿No encuentras lo que buscas?</h3>
       <p>Servicio de importación personalizada, cuéntanos qué necesitas y lo traemos directo para ti.</p>
-      <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20solicitar%20una%20cotización%20especial%20de%20importación" target="_blank" class="btn btn-lime">Solicitar cotización especial</a>
+      <a href="https://wa.me/50672429342?text=Hola,%20deseo%20solicitar%20una%20cotización%20especial%20de%20importación" target="_blank" class="btn btn-lime">Solicitar cotización especial</a>
     </div>
   </section>
 
@@ -1104,22 +364,18 @@
     <div class="container">
       <div class="trust-grid">
         <div class="trust-item">
-          <div class="trust-icon">🚢</div>
           <h4>Importación Directa</h4>
           <p>Trámites aduaneros incluidos, sin preocupaciones.</p>
         </div>
         <div class="trust-item">
-          <div class="trust-icon">✅</div>
           <h4>Garantía Oficial</h4>
           <p>Todos nuestros productos cuentan con garantía.</p>
         </div>
         <div class="trust-item">
-          <div class="trust-icon">⚡</div>
           <h4>Entrega Rápida</h4>
           <p>Logística eficiente con seguimiento en tiempo real.</p>
         </div>
         <div class="trust-item">
-          <div class="trust-icon">🤝</div>
           <h4>Asesoría Personalizada</h4>
           <p>Te acompañamos en todo el proceso de importación.</p>
         </div>
@@ -1162,13 +418,13 @@
             <a href="https://wa.me/50672429342" target="_blank" title="WhatsApp">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="#9ca3af"><path d="M17.472 14.382c-.297.149-1.758.867-2.03.967-.273.099-.471.148-.67-.15-.197-.297-.767-.966-.94-1.164-.173-.199-.347-.223-.644-.075-.297.15-1.255.463-2.39-1.198-.883-.852-1.476-1.902-1.65-2.198-.174-.297-.019-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             </a>
-            <a href="https://www.instagram.com/electroriginc" target="_blank" title="Instagram" id="social-instagram">
+            <a href="https://www.instagram.com/electroriginc" target="_blank" title="Instagram">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="#9ca3af"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.058-1.69-.072-4.949-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
             </a>
-            <a href="https://www.facebook.com/share/19Akjs433C/" target="_blank" title="Facebook" id="social-facebook">
+            <a href="https://www.facebook.com/share/19Akjs433C/" target="_blank" title="Facebook">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="#9ca3af"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
             </a>
-            <a href="#" target="_blank" title="LinkedIn" id="social-linkedin">
+            <a href="#" target="_blank" title="LinkedIn">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="#9ca3af"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             </a>
           </div>
@@ -1183,7 +439,7 @@
         </div>
         <div class="footer-col">
           <h4>Contacto</h4>
-          <p>Jonathan Zamora</p>
+          <p>Equipo ElectrOriginc</p>
           <p>WhatsApp: +506 72429342</p>
           <p>Email: info@electroriginc.com</p>
           <p>Alajuela, Costa Rica</p>
@@ -1191,13 +447,13 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 ElectrOriginc. Todos los derechos reservados. · Alajuela, Costa Rica</p>
+        <p>&copy; 2024 ElectrOriginc. Todos los derechos reservados. · Hecho con innovación</p>
       </div>
     </div>
   </footer>
 
   <!-- BURBUJA FLOTANTE DE WHATSAPP -->
-  <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20asesoría%20sobre%20importaciones" target="_blank" class="whatsapp-float" aria-label="Contactar a un asesor por WhatsApp">
+  <a href="https://wa.me/50672429342?text=Hola,%20deseo%20asesoría%20sobre%20importaciones" target="_blank" class="whatsapp-float" aria-label="Contactar a un asesor por WhatsApp">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297.149-1.758.867-2.03.967-.273.099-.471.148-.67-.15-.197-.297-.767-.966-.94-1.164-.173-.199-.347-.223-.644-.075-.297.15-1.255.463-2.39-1.198-.883-.852-1.476-1.902-1.65-2.198-.174-.297-.019-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     <span class="wa-label">Contactar a un asesor</span>
   </a>
