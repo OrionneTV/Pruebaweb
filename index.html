@@ -270,9 +270,9 @@
     }
 
     .tracking-section {
-      background-color: #0e131a;
+      background-color: var(--bg-card);
       padding: 35px 0;
-      border-bottom: 1px solid #18202d;
+      border-bottom: 1px solid var(--border-card);
     }
 
     .tracking-box {
@@ -553,11 +553,12 @@
 </head>
 <body>
 
+  <!-- HEADER -->
   <header>
     <div class="container nav-wrapper">
       <a href="#" class="brand">
         <div class="brand-icon">
-          <img src="https://drive.google.com/thumbnail?id=1CpoEK5M1gyYrQMsVmb0-3VaX5R6yI9rz&sz=w200" alt="ElectrOriginc Logo">
+          <img src="https://drive.google.com/thumbnail?id=1Vje8oHzX95t6O70GZMoD8HdkU40_BEcj&sz=w200" alt="ElectrOriginc Logo">
         </div>
         <div class="brand-text">
           <div class="brand-title">Electr<span style="color: var(--primary);">O</span>rigin<span style="color: var(--primary);">c</span></div>
@@ -578,7 +579,9 @@
     </div>
   </header>
 
+  <!-- CARRUSEL HERO AUTOMÁTICO (Cada 5 segundos) -->
   <section class="slider-container" id="inicio">
+    <!-- Diapositiva 1: Importación directa -->
     <div class="slide slide-1 active">
       <div class="slide-content">
         <span class="slide-tag">Importaciones Directas</span>
@@ -591,6 +594,7 @@
       </div>
     </div>
 
+    <!-- Diapositiva 2: Movilidad eléctrica -->
     <div class="slide slide-2">
       <div class="slide-content">
         <span class="slide-tag">Movilidad Eléctrica</span>
@@ -603,6 +607,7 @@
       </div>
     </div>
 
+    <!-- Diapositiva 3: Casas modulares -->
     <div class="slide slide-3">
       <div class="slide-content">
         <span class="slide-tag">Casas Modulares</span>
@@ -615,6 +620,7 @@
       </div>
     </div>
 
+    <!-- Indicadores -->
     <div class="slider-indicators">
       <span class="dot active" onclick="currentSlide(0)"></span>
       <span class="dot" onclick="currentSlide(1)"></span>
@@ -622,6 +628,7 @@
     </div>
   </section>
 
+  <!-- BARRA DE TRACKING (RASTREO) -->
   <section class="tracking-section" id="rastreo">
     <div class="container tracking-box">
       <h3>📦 Rastrea tu importación</h3>
@@ -633,8 +640,10 @@
     </div>
   </section>
 
+  <!-- CATÁLOGO -->
   <section class="catalog" id="catalogo">
 
+    <!-- SECCIÓN 1: Vehículos Híbridos y Eléctricos -->
     <div class="container catalog-subsection" id="vehiculos">
       <div class="section-header">
         <h2>Nuestro Catálogo</h2>
@@ -644,6 +653,7 @@
       <p class="subsection-desc">Importación de vehículos híbridos y eléctricos de las mejores marcas del mundo.</p>
       <div class="grid">
 
+        <!-- Vehículo 1 -->
         <div class="card">
           <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=600&q=80" alt="SUV Híbrida Enchufable">
           <div class="card-body">
@@ -656,6 +666,7 @@
           </div>
         </div>
 
+        <!-- Vehículo 2 -->
         <div class="card">
           <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=600&q=80" alt="Sedán Eléctrico">
           <div class="card-body">
@@ -671,11 +682,13 @@
       </div>
     </div>
 
+    <!-- SECCIÓN 2: Casas Modulares Inteligentes SmartHome -->
     <div class="container catalog-subsection" id="casas">
       <h3>Casas Modulares Inteligentes SmartHome</h3>
       <p class="subsection-desc">Importación de casas modulares con tecnología domótica, autoconsumo solar y diseño moderno.</p>
       <div class="grid">
 
+        <!-- Casa Modular 1 -->
         <div class="card">
           <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Casa Modular Smart 40">
           <div class="card-body">
@@ -688,6 +701,7 @@
           </div>
         </div>
 
+        <!-- Casa Modular 2 -->
         <div class="card">
           <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a707?auto=format&fit=crop&w=600&q=80" alt="Casa Modular Eco 75">
           <div class="card-body">
@@ -703,11 +717,13 @@
       </div>
     </div>
 
+    <!-- SECCIÓN 3: Cargadores y Estaciones Eléctricas -->
     <div class="container catalog-subsection" id="cargadores">
       <h3>Cargadores para Vehículos Eléctricos & Estaciones Eléctricas</h3>
       <p class="subsection-desc">Importación de cargadores y estaciones de carga para vehículos eléctricos.</p>
       <div class="grid">
 
+        <!-- Cargador 1 -->
         <div class="card">
           <img src="https://images.unsplash.com/photo-1593789382576-e828c8d8b763?auto=format&fit=crop&w=600&q=80" alt="Cargador Wallbox">
           <div class="card-body">
@@ -720,6 +736,7 @@
           </div>
         </div>
 
+        <!-- Cargador 2 -->
         <div class="card">
           <img src="https://images.unsplash.com/photo-1610647752706-3bb12232b3a5?auto=format&fit=crop&w=600&q=80" alt="Estación de Carga Rápida">
           <div class="card-body">
@@ -737,6 +754,7 @@
 
   </section>
 
+  <!-- FOOTER Y CONTACTO -->
   <footer id="contacto">
     <div class="container">
       <div class="footer-grid">
@@ -767,11 +785,13 @@
     </div>
   </footer>
 
+  <!-- BURBUJA FLOTANTE DE WHATSAPP -->
   <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20asesoría%20sobre%20importaciones" target="_blank" class="whatsapp-float" aria-label="Contactar a un asesor por WhatsApp">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297.149-1.758.867-2.03.967-.273.099-.471.148-.67-.15-.197-.297-.767-.966-.94-1.164-.173-.199-.347-.223-.644-.075-.297.15-1.255.463-2.39-1.198-.883-.852-1.476-1.902-1.65-2.198-.174-.297-.019-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     <span class="wa-label">Contactar a un asesor</span>
   </a>
 
+  <!-- SCRIPT DEL CARRUSEL -->
   <script>
     let slideIndex = 0;
     const slides = document.querySelectorAll('.slide');
@@ -809,6 +829,7 @@
       slideInterval = setInterval(nextSlide, 5000);
     }
 
+    // Swipe con los dedos
     function handleSwipe() {
       const diff = touchStartX - touchEndX;
       if (Math.abs(diff) > 50) {
@@ -833,6 +854,7 @@
 
     startSlider();
 
+    // Animación de tarjetas al hacer scroll
     const cards = document.querySelectorAll('.card');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
