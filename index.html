@@ -92,9 +92,10 @@
 
     .nav-wrapper {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       padding: 16px 0;
+      position: relative;
     }
 
     .brand {
@@ -161,6 +162,10 @@
     nav {
       display: flex;
       align-items: center;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
     }
 
     nav a {
@@ -441,11 +446,11 @@
       transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.5s ease, box-shadow 0.5s ease;
       overflow: hidden;
       opacity: 0;
-      transform: translateY(50px) scale(0.98);
+      transform: translateY(40px) scale(0.98);
     }
 
     .audience-card.visible {
-      animation: fadeInCard 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      animation: fadeInCard 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     }
 
     .audience-card:hover {
@@ -580,11 +585,11 @@
       flex-direction: column;
       transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.5s ease, box-shadow 0.5s ease;
       opacity: 0;
-      transform: translateY(50px) scale(0.98);
+      transform: translateY(40px) scale(0.98);
     }
 
     .card.visible {
-      animation: fadeInCard 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      animation: fadeInCard 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     }
 
     @keyframes fadeInCard {
@@ -694,6 +699,12 @@
       margin: 0 auto 60px;
       max-width: 700px;
       transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(40px) scale(0.98);
+    }
+
+    .custom-import.visible {
+      animation: fadeInCard 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     }
 
     .custom-import:hover {
@@ -864,12 +875,12 @@
       .tracking-form input { width: 100%; }
       .tracking-form button { width: 100%; }
       .nav-wrapper { flex-direction: column; gap: 12px; padding: 12px 0; align-items: center; }
+      nav { position: static; transform: none; right: auto; top: auto; flex-wrap: wrap; justify-content: center; gap: 4px 12px; }
       .brand-text { text-align: center; }
       .brand { justify-content: center; align-items: center; }
       .brand-icon { width: 100px; height: 100px; }
       .brand-title { font-size: 1.3rem; }
       .brand-subtitle .sub-text { font-size: 0.44rem; }
-      nav { flex-wrap: wrap; justify-content: center; gap: 4px 12px; }
       nav a { margin: 0; font-size: 0.82rem; }
       .whatsapp-float .wa-label { display: none; }
       .whatsapp-float { padding: 14px; }
@@ -1211,7 +1222,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2024 ElectrOriginc. Todos los derechos reservados. · Hecho con innovación</p>
+        <p>&copy; 2021–2026 ElectrOriginc. Todos los derechos reservados. · Hecho con innovación</p>
       </div>
     </div>
   </footer>
@@ -1316,33 +1327,19 @@
 
     startSlider();
 
-    // ANIMACIÓN DE TARJETAS
-    const cards = document.querySelectorAll('.card');
-    const observer = new IntersectionObserver((entries) => {
+    // ANIMACIÓN DE TARJETAS (catálogo, empresas/personas, importación personalizada)
+    const animatedCards = document.querySelectorAll('.card, .audience-card, .custom-import');
+    const cardObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
         if (entry.isIntersecting) {
           setTimeout(() => {
             entry.target.classList.add('visible');
-          }, i * 250);
-          observer.unobserve(entry.target);
+          }, i * 200);
+          cardObserver.unobserve(entry.target);
         }
       });
     }, { threshold: 0.15 });
-    cards.forEach(card => observer.observe(card));
-
-    // ANIMACIÓN DE TARJETAS EMPRESAS/PERSONAS
-    const audienceCards = document.querySelectorAll('.audience-card');
-    const audienceObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, i * 250);
-          audienceObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-    audienceCards.forEach(card => audienceObserver.observe(card));
+    animatedCards.forEach(card => cardObserver.observe(card));
 
     // CONTADORES ANIMADOS
     const counters = document.querySelectorAll('.counter-number');
