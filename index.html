@@ -100,7 +100,7 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 12px;
       text-decoration: none;
       user-select: none;
     }
@@ -124,7 +124,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      text-align: center;
+      text-align: left;
     }
 
     .brand-title {
@@ -438,8 +438,14 @@
       border-radius: 14px;
       padding: 35px 30px;
       text-align: center;
-      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.5s ease, box-shadow 0.5s ease;
       overflow: hidden;
+      opacity: 0;
+      transform: translateY(50px) scale(0.98);
+    }
+
+    .audience-card.visible {
+      animation: fadeInCard 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     }
 
     .audience-card:hover {
@@ -857,8 +863,9 @@
       .tracking-form { flex-direction: column; padding: 0 10px; }
       .tracking-form input { width: 100%; }
       .tracking-form button { width: 100%; }
-      .nav-wrapper { flex-direction: column; gap: 12px; padding: 12px 0; }
-      .brand { justify-content: center; }
+      .nav-wrapper { flex-direction: column; gap: 12px; padding: 12px 0; align-items: center; }
+      .brand-text { text-align: center; }
+      .brand { justify-content: center; align-items: center; }
       .brand-icon { width: 100px; height: 100px; }
       .brand-title { font-size: 1.3rem; }
       .brand-subtitle .sub-text { font-size: 0.44rem; }
@@ -887,6 +894,7 @@
       .brand-icon { width: 80px; height: 80px; }
       .brand-title { font-size: 1.15rem; }
       .brand-subtitle .sub-text { font-size: 0.38rem; letter-spacing: 1px; }
+      .brand { justify-content: center; align-items: center; }
       .slide-content h1 { font-size: 1.7rem; }
       .slider-container { height: 450px; }
       .hero-btn-group { flex-direction: column; }
@@ -1027,7 +1035,7 @@
           <div class="card-body">
             <span class="badge-category">Híbrido Enchufable</span>
             <h3>SUV Híbrida Premium</h3>
-            <p>Autonomía eléctrica 60 km · 4x4 · 7 plazas. Importación con garantía oficial y trámites incluidos.</p>
+            <p>Autonomía eléctrica combinada 1000km · 4x4. Importación con garantía oficial y trámites incluidos.</p>
             <div class="card-actions">
               <a href="https://wa.me/50672429342?text=Hola%20Equipo%20ElectrOriginc,%20deseo%20cotizar%20la%20SUV%20Híbrida%20Premium" target="_blank" class="btn btn-lime">Cotizar</a>
             </div>
@@ -1052,7 +1060,7 @@
       <p class="subsection-desc">Importación de casas modulares con tecnología domótica, autoconsumo solar y diseño moderno.</p>
       <div class="grid">
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Casa Modular Smart 40">
+          <img src="https://drive.google.com/thumbnail?id=1aITmjYLrEWmXtM39LvF5e9FNk6xVireN&sz=w600" alt="Casa Modular Smart 40">
           <div class="card-body">
             <span class="badge-category">SmartHome 40m²</span>
             <h3>ModulHome Smart 40</h3>
@@ -1063,7 +1071,7 @@
           </div>
         </div>
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a707?auto=format&fit=crop&w=600&q=80" alt="Casa Modular Eco 75">
+          <img src="https://drive.google.com/thumbnail?id=180mlmWWP-LYMjbqPzdvUZ7fQrWUCx_fO&sz=w600" alt="Casa Modular Eco 75">
           <div class="card-body">
             <span class="badge-category">SmartHome 75m²</span>
             <h3>ModulHome Eco 75</h3>
@@ -1081,7 +1089,7 @@
       <p class="subsection-desc">Importación de cargadores y estaciones de carga para vehículos eléctricos.</p>
       <div class="grid">
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=600&q=80" alt="Cargador Wallbox">
+          <img src="https://drive.google.com/thumbnail?id=19MMc57fu7pbkiUU56js2w17P82gEuU7y&sz=w600" alt="Cargador Wallbox">
           <div class="card-body">
             <span class="badge-category">Cargador Wallbox</span>
             <h3>PowerCharge Wallbox Pro</h3>
@@ -1092,7 +1100,7 @@
           </div>
         </div>
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1610647752706-3bb12232b3a5?auto=format&fit=crop&w=600&q=80" alt="Estación de Carga Rápida">
+          <img src="https://drive.google.com/thumbnail?id=1hB5gImE3B9a8bDrJkC30J3yQ12V8Hg0w&sz=w600" alt="Estación de Carga Rápida">
           <div class="card-body">
             <span class="badge-category">Estación de Carga Rápida</span>
             <h3>FastCharge Station 50kW</h3>
@@ -1321,6 +1329,20 @@
       });
     }, { threshold: 0.15 });
     cards.forEach(card => observer.observe(card));
+
+    // ANIMACIÓN DE TARJETAS EMPRESAS/PERSONAS
+    const audienceCards = document.querySelectorAll('.audience-card');
+    const audienceObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, i * 250);
+          audienceObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    audienceCards.forEach(card => audienceObserver.observe(card));
 
     // CONTADORES ANIMADOS
     const counters = document.querySelectorAll('.counter-number');
