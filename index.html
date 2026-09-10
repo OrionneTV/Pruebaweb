@@ -92,10 +92,9 @@
 
     .nav-wrapper {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       padding: 16px 0;
-      position: relative;
     }
 
     .brand {
@@ -125,7 +124,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      text-align: left;
+      text-align: center;
     }
 
     .brand-title {
@@ -162,10 +161,6 @@
     nav {
       display: flex;
       align-items: center;
-      position: absolute;
-      right: 20px;
-      top: 50%;
-      transform: translateY(-50%);
     }
 
     nav a {
@@ -875,7 +870,7 @@
       .tracking-form input { width: 100%; }
       .tracking-form button { width: 100%; }
       .nav-wrapper { flex-direction: column; gap: 12px; padding: 12px 0; align-items: center; }
-      nav { position: static; transform: none; right: auto; top: auto; flex-wrap: wrap; justify-content: center; gap: 4px 12px; }
+      nav { flex-wrap: wrap; justify-content: center; gap: 4px 12px; }
       .brand-text { text-align: center; }
       .brand { justify-content: center; align-items: center; }
       .brand-icon { width: 100px; height: 100px; }
